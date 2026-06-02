@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebAssist — Stop Waiting for Your Web Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wa: '#25D366',
+            waDark: '#128C7E',
+            waLight: '#DCF8C6',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .chat-bubble-out {
+      background: #DCF8C6;
+      border-radius: 18px 18px 4px 18px;
+    }
+    .chat-bubble-in {
+      background: #fff;
+      border-radius: 18px 18px 18px 4px;
+    }
+    .gradient-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2a1e 100%);
+    }
+    .tick { color: #25D366; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
+    .fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-wa rounded-lg flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-5 h-5"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.073-1.117l-.29-.173-2.95.818.79-2.875-.19-.298A8 8 0 1112 20z"/></svg>
+      </div>
+      <span class="font-bold text-lg tracking-tight">WebAssist</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+      <a href="#solution" class="hover:text-gray-900 transition">How It Works</a>
+      <a href="#examples" class="hover:text-gray-900 transition">Examples</a>
+      <a href="#pricing" class="hover:text-gray-900 transition">Pricing</a>
+      <a href="#faq" class="hover:text-gray-900 transition">FAQ</a>
+    </div>
+    <a href="#demo" class="bg-wa hover:bg-waDark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
+      Book a Free Demo
+    </a>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section class="gradient-hero pt-32 pb-24 px-6 text-white overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-wa/20 border border-wa/30 rounded-full px-4 py-1.5 text-wa text-sm font-medium mb-8 fade-up">
+          <span class="w-2 h-2 bg-wa rounded-full animate-pulse"></span>
+          AI-Powered Website Updates
+        </div>
+        <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6 fade-up-2">
+          Stop Waiting for Your<br/>
+          <span class="text-wa">Web Developer.</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-4 fade-up-3">
+          Send a WhatsApp message and your website gets updated <strong class="text-white">the same day.</strong>
+        </p>
+        <p class="text-gray-400 mb-10 fade-up-3">
+          No tickets. &nbsp;No meetings. &nbsp;No technical skills required.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 fade-up-3">
+          <a href="#demo" class="bg-wa hover:bg-waDark text-white font-bold px-8 py-4 rounded-full text-lg transition text-center shadow-lg shadow-wa/30">
+            Book a Free Demo
+          </a>
+          <a href="#video" class="flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full text-lg transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch 2-Minute Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Chat Mockup -->
+      <div class="relative">
+        <div class="bg-gray-800 rounded-[40px] p-3 shadow-2xl max-w-sm mx-auto border border-gray-700">
+          <!-- Phone top bar -->
+          <div class="bg-waDark rounded-[32px_32px_0_0] px-4 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-wa flex items-center justify-center font-bold text-white text-lg">W</div>
+            <div>
+              <div class="text-white font-semibold text-sm">WebAssist</div>
+              <div class="text-green-200 text-xs">Online</div>
+            </div>
+          </div>
+          <!-- Chat window -->
+          <div class="bg-[#e5ddd5] rounded-[0_0_32px_32px] p-4 space-y-3 min-h-[280px]">
+            <!-- Customer message -->
+            <div class="flex justify-end">
+              <div class="chat-bubble-out px-4 py-2.5 max-w-[85%] shadow-sm">
+                <p class="text-gray-800 text-sm">"Change the price from <strong>€499</strong> to <strong>€399</strong>"</p>
+                <p class="text-gray-400 text-[10px] text-right mt-1">09:41 ✓✓</p>
+              </div>
+            </div>
+            <!-- AI response -->
+            <div class="flex justify-start">
+              <div class="chat-bubble-in px-4 py-2.5 max-w-[85%] shadow-sm border border-gray-100">
+                <p class="text-gray-800 text-sm">Done ✅</p>
+                <p class="text-gray-600 text-sm mt-1">The price has been updated to <strong>€399</strong>. Your website is live.</p>
+                <p class="text-gray-400 text-[10px] mt-1">09:42</p>
+              </div>
+            </div>
+            <!-- Customer message 2 -->
+            <div class="flex justify-end">
+              <div class="chat-bubble-out px-4 py-2.5 max-w-[85%] shadow-sm">
+                <p class="text-gray-800 text-sm">"Add our new team member Sarah, she's a senior consultant"</p>
+                <p class="text-gray-400 text-[10px] text-right mt-1">10:15 ✓✓</p>
+              </div>
+            </div>
+            <!-- AI response 2 -->
+            <div class="flex justify-start">
+              <div class="chat-bubble-in px-4 py-2.5 max-w-[85%] shadow-sm border border-gray-100">
+                <p class="text-gray-800 text-sm">Sarah has been added to your team page ✅</p>
+                <p class="text-gray-400 text-[10px] mt-1">10:16</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Glow effect -->
+        <div class="absolute inset-0 bg-wa/10 blur-3xl rounded-full -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<section class="bg-gray-50 border-y border-gray-200 py-5 px-6">
+  <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-12 gap-y-3 text-gray-500 text-sm">
+    <span class="font-semibold text-gray-700">Works with:</span>
+    <span>WordPress</span>
+    <span class="text-gray-300">|</span>
+    <span>Webflow</span>
+    <span class="text-gray-300">|</span>
+    <span>Shopify</span>
+    <span class="text-gray-300">|</span>
+    <span>Wix</span>
+    <span class="text-gray-300">|</span>
+    <span>Squarespace</span>
+    <span class="text-gray-300">|</span>
+    <span>Custom HTML</span>
+    <span class="text-gray-300">|</span>
+    <span class="text-wa font-medium">+ more</span>
+  </div>
+</section>
+
+<!-- SECTION 2: THE PROBLEM -->
+<section class="py-24 px-6 bg-white" id="problem">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+        Most business owners are<br/>
+        <span class="text-red-500">trapped behind their website.</span>
+      </h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+        Your website should help your business grow. Instead, most companies are dependent on a developer for every little change.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-5 gap-4 mb-12">
+      <!-- Pain points -->
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
+        <div class="text-2xl mb-2">❌</div>
+        <p class="text-sm font-medium text-gray-800">Wait days for small updates</p>
+      </div>
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
+        <div class="text-2xl mb-2">❌</div>
+        <p class="text-sm font-medium text-gray-800">Pay developers for simple changes</p>
+      </div>
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
+        <div class="text-2xl mb-2">❌</div>
+        <p class="text-sm font-medium text-gray-800">Don't know how to use WordPress</p>
+      </div>
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
+        <div class="text-2xl mb-2">❌</div>
+        <p class="text-sm font-medium text-gray-800">Need a laptop for every update</p>
+      </div>
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
+        <div class="text-2xl mb-2">❌</div>
+        <p class="text-sm font-medium text-gray-800">Technical language and delays</p>
+      </div>
+    </div>
+    <!-- Before/After comparison -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-red-50 rounded-3xl p-8 border border-red-100">
+        <h3 class="font-bold text-red-600 mb-5 text-lg">Before WebAssist</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Email your developer and wait</li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Get a quote for a 5-minute change</li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Log into WordPress and get confused</li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> 2–5 day turnaround for small updates</li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Your business suffers in the meantime</li>
+        </ul>
+      </div>
+      <div class="bg-green-50 rounded-3xl p-8 border border-green-100">
+        <h3 class="font-bold text-wa mb-5 text-lg">After WebAssist</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> Send a WhatsApp message</li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> AI processes and applies the update</li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> Website goes live same day</li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> Confirmation sent back to you</li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> No technical skills needed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: THE SOLUTION -->
+<section class="py-24 px-6 bg-gray-950 text-white" id="solution">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">The Solution</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6">
+      Manage your website<br/>from <span class="text-wa">WhatsApp.</span>
+    </h2>
+    <p class="text-gray-400 text-lg mb-16 max-w-xl mx-auto">
+      No backend. No logins. No developer needed. Just send a message.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left">
+        <div class="w-12 h-12 bg-wa/10 rounded-2xl flex items-center justify-center mb-5">
+          <span class="text-wa text-2xl font-black">1</span>
+        </div>
+        <h3 class="font-bold text-xl mb-3">Send a message</h3>
+        <p class="text-gray-400 mb-4">Type your update naturally in WhatsApp — just like texting a colleague.</p>
+        <div class="chat-bubble-out p-3 rounded-2xl rounded-bl-sm text-sm text-gray-800">
+          "Add a new team member"
+        </div>
+      </div>
+      <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left">
+        <div class="w-12 h-12 bg-wa/10 rounded-2xl flex items-center justify-center mb-5">
+          <span class="text-wa text-2xl font-black">2</span>
+        </div>
+        <h3 class="font-bold text-xl mb-3">AI handles the update</h3>
+        <p class="text-gray-400">Our AI reads the request, finds the right section on your website, and applies the change — images, text and layout.</p>
+      </div>
+      <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left">
+        <div class="w-12 h-12 bg-wa/10 rounded-2xl flex items-center justify-center mb-5">
+          <span class="text-wa text-2xl font-black">3</span>
+        </div>
+        <h3 class="font-bold text-xl mb-3">Website goes live</h3>
+        <p class="text-gray-400 mb-4">Usually the same day. You get a confirmation message back.</p>
+        <div class="chat-bubble-in p-3 rounded-2xl rounded-tl-sm text-sm text-gray-800">
+          "Done ✅ Your website is live."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: LIVE EXAMPLES -->
+<section class="py-24 px-6 bg-white" id="examples">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">What Can You Update?</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6">
+      Send it. We'll handle it.
+    </h2>
+    <p class="text-gray-500 text-lg mb-14">If you can describe it in a message, we can update it on your website.</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">💰</div>
+        <p class="text-sm font-semibold text-gray-800">Change prices</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">📋</div>
+        <p class="text-sm font-semibold text-gray-800">Update services</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">✏️</div>
+        <p class="text-sm font-semibold text-gray-800">Fix spelling mistakes</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">🖼️</div>
+        <p class="text-sm font-semibold text-gray-800">Replace images</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">⭐</div>
+        <p class="text-sm font-semibold text-gray-800">Add testimonials</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">👤</div>
+        <p class="text-sm font-semibold text-gray-800">Add team members</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">📞</div>
+        <p class="text-sm font-semibold text-gray-800">Change contact details</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">🚀</div>
+        <p class="text-sm font-semibold text-gray-800">Create landing pages</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">🕐</div>
+        <p class="text-sm font-semibold text-gray-800">Update opening hours</p>
+      </div>
+      <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
+        <div class="text-2xl mb-2">📝</div>
+        <p class="text-sm font-semibold text-gray-800">Add blog posts</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: WHO IS THIS FOR -->
+<section class="py-24 px-6 bg-gray-50" id="who">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">Who Is This For?</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6">
+      Perfect for businesses that update<br/>their website regularly.
+    </h2>
+    <p class="text-gray-500 text-lg mb-14">If you have a website and need to update it more than once a month — this is for you.</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
+        <div class="text-3xl">🏠</div>
+        <div>
+          <h4 class="font-bold text-gray-900">Real Estate Agencies</h4>
+          <p class="text-gray-500 text-sm">New listings, price changes, agent updates</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
+        <div class="text-3xl">🍽️</div>
+        <div>
+          <h4 class="font-bold text-gray-900">Restaurants</h4>
+          <p class="text-gray-500 text-sm">Menus, hours, seasonal promotions</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
+        <div class="text-3xl">🏥</div>
+        <div>
+          <h4 class="font-bold text-gray-900">Clinics</h4>
+          <p class="text-gray-500 text-sm">Services, staff, booking information</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
+        <div class="text-3xl">⚖️</div>
+        <div>
+          <h4 class="font-bold text-gray-900">Law Firms</h4>
+          <p class="text-gray-500 text-sm">Attorney profiles, practice areas, news</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
+        <div class="text-3xl">💼</div>
+        <div>
+          <h4 class="font-bold text-gray-900">Consultants</h4>
+          <p class="text-gray-500 text-sm">Services, case studies, availability</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
+        <div class="text-3xl">🛠️</div>
+        <div>
+          <h4 class="font-bold text-gray-900">Local Service Businesses</h4>
+          <p class="text-gray-500 text-sm">Offers, contact info, testimonials</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: DEMO VIDEO -->
+<section class="py-24 px-6 bg-white" id="video">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">See It In Action</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6">Watch It In Action</h2>
+    <p class="text-gray-500 text-lg mb-12">See how a business owner updates their website in under 60 seconds — just by sending a WhatsApp message.</p>
+    <!-- Video placeholder -->
+    <div class="bg-gray-900 rounded-3xl aspect-video flex items-center justify-center shadow-2xl border border-gray-800 cursor-pointer group relative overflow-hidden">
+      <div class="absolute inset-0 bg-wa/5 group-hover:bg-wa/10 transition"></div>
+      <div class="w-20 h-20 bg-wa rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white ml-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <p class="absolute bottom-6 text-gray-400 text-sm">2-minute demo — no sign-up required</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: PRICING -->
+<section class="py-24 px-6 bg-gray-950 text-white" id="pricing">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">Pricing</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6">Simple, transparent pricing.</h2>
+    <p class="text-gray-400 text-lg mb-16">All plans include onboarding, WhatsApp setup, and a dedicated AI assistant for your website.</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Starter -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left flex flex-col">
+        <div class="mb-6">
+          <h3 class="font-bold text-xl mb-1">Starter</h3>
+          <p class="text-gray-500 text-sm mb-4">For businesses with occasional updates</p>
+          <div class="flex items-end gap-1">
+            <span class="text-5xl font-black">€99</span>
+            <span class="text-gray-400 mb-2">/month</span>
+          </div>
+          <p class="text-gray-500 text-sm mt-1">+ €650 setup fee</p>
+        </div>
+        <ul class="space-y-3 text-gray-300 text-sm mb-8 flex-1">
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Up to 10 updates/month</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> WhatsApp support</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Text & price changes</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Same-day turnaround</li>
+        </ul>
+        <a href="#demo" class="block text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3.5 rounded-full transition">
+          Book Demo
+        </a>
+      </div>
+
+      <!-- Professional (featured) -->
+      <div class="bg-wa rounded-3xl p-8 text-left flex flex-col relative shadow-2xl shadow-wa/20 border-2 border-wa">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-wa text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
+          Most Popular
+        </div>
+        <div class="mb-6">
+          <h3 class="font-bold text-xl mb-1">Professional</h3>
+          <p class="text-white/70 text-sm mb-4">For active businesses</p>
+          <div class="flex items-end gap-1">
+            <span class="text-5xl font-black">€299</span>
+            <span class="text-white/70 mb-2">/month</span>
+          </div>
+          <p class="text-white/60 text-sm mt-1">+ €999 setup fee</p>
+        </div>
+        <ul class="space-y-3 text-white/90 text-sm mb-8 flex-1">
+          <li class="flex items-center gap-2"><span>✓</span> Unlimited small changes</li>
+          <li class="flex items-center gap-2"><span>✓</span> Image replacements</li>
+          <li class="flex items-center gap-2"><span>✓</span> SEO text updates</li>
+          <li class="flex items-center gap-2"><span>✓</span> Priority turnaround</li>
+          <li class="flex items-center gap-2"><span>✓</span> Monthly report</li>
+        </ul>
+        <a href="#demo" class="block text-center bg-white text-wa hover:bg-gray-100 font-bold py-3.5 rounded-full transition">
+          Book Demo
+        </a>
+      </div>
+
+      <!-- Business -->
+      <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left flex flex-col">
+        <div class="mb-6">
+          <h3 class="font-bold text-xl mb-1">Business</h3>
+          <p class="text-gray-500 text-sm mb-4">For agencies and fast-moving businesses</p>
+          <div class="flex items-end gap-1">
+            <span class="text-5xl font-black">€699</span>
+            <span class="text-gray-400 mb-2">/month</span>
+          </div>
+          <p class="text-gray-500 text-sm mt-1">+ €1,500 setup fee</p>
+        </div>
+        <ul class="space-y-3 text-gray-300 text-sm mb-8 flex-1">
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Everything in Professional</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> New landing pages</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Advanced content updates</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Priority support</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Dedicated account manager</li>
+        </ul>
+        <a href="#demo" class="block text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3.5 rounded-full transition">
+          Book Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section class="py-24 px-6 bg-white" id="faq">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">FAQ</p>
+      <h2 class="text-4xl md:text-5xl font-black">Common Questions</h2>
+    </div>
+    <div class="space-y-4">
+      <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
+          Can you work with my existing website?
+          <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-gray-600">Yes. We work with WordPress, Webflow, Shopify, Wix, Squarespace, and most custom-built websites. During onboarding we connect to your existing site — no migration needed.</p>
+      </details>
+      <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
+          How fast are updates completed?
+          <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-gray-600">Most updates are completed the same day, often within a few hours. Complex changes like new landing pages may take 24–48 hours. You always receive a confirmation message when your website is live.</p>
+      </details>
+      <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
+          Do I need technical skills?
+          <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-gray-600">Not at all. If you can send a WhatsApp message, you can use WebAssist. There's no login, no backend, no technical knowledge required. Just type what you want changed.</p>
+      </details>
+      <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
+          Can I cancel anytime?
+          <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-gray-600">Yes. Monthly subscriptions can be cancelled with 30 days notice. There are no long-term contracts on monthly plans. Annual plans are billed upfront.</p>
+      </details>
+      <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
+          What happens if I need bigger changes?
+          <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-gray-600">For major redesigns or entirely new websites, we can discuss a custom project quote. Our Business plan covers most advanced changes including new landing pages, blog posts, and full content overhauls.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
+<section class="py-24 px-6 gradient-hero text-white" id="demo">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-5xl md:text-6xl font-black mb-6">
+      Never wait for a web<br/>developer <span class="text-wa">again.</span>
+    </h2>
+    <p class="text-xl text-gray-300 mb-12">
+      Book a free demo and see your website controlled directly from WhatsApp.
+    </p>
+    <a href="mailto:hello@webassist.ai" class="inline-block bg-wa hover:bg-waDark text-white font-black text-xl px-12 py-5 rounded-full transition shadow-2xl shadow-wa/30">
+      Book My Demo
+    </a>
+    <p class="text-gray-500 mt-6 text-sm">No commitment. 30-minute call. See it live.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-gray-500 py-10 px-6 border-t border-gray-900">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <div class="w-7 h-7 bg-wa rounded-lg flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4 h-4"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      </div>
+      <span class="text-white font-bold">WebAssist</span>
+    </div>
+    <p class="text-sm">&copy; 2026 WebAssist. All rights reserved.</p>
+    <div class="flex gap-6 text-sm">
+      <a href="#" class="hover:text-white transition">Privacy</a>
+      <a href="#" class="hover:text-white transition">Terms</a>
+      <a href="mailto:hello@webassist.ai" class="hover:text-white transition">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
