@@ -84,9 +84,9 @@
           No tickets. &nbsp;No meetings. &nbsp;No technical skills required.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 fade-up-3">
-          <a href="#demo" class="bg-wa hover:bg-waDark text-white font-bold px-8 py-4 rounded-full text-lg transition text-center shadow-lg shadow-wa/30">
+          <button onclick="openModal()" class="bg-wa hover:bg-waDark text-white font-bold px-8 py-4 rounded-full text-lg transition text-center shadow-lg shadow-wa/30">
             Book a Free Demo
-          </a>
+          </button>
           <a href="#video" class="flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full text-lg transition">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             Watch 2-Minute Demo
@@ -421,9 +421,12 @@
           <li class="flex items-center gap-2"><span class="text-wa">✓</span> Text & price changes</li>
           <li class="flex items-center gap-2"><span class="text-wa">✓</span> Same-day turnaround</li>
         </ul>
-        <a href="#demo" class="block text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3.5 rounded-full transition">
-          Book Demo
+        <a href="https://buy.stripe.com/8x2cN49zvgaN4Wn4xu08g0n" target="_blank" class="block text-center bg-wa hover:bg-waDark text-white font-bold py-3.5 rounded-full transition mb-3">
+          Buy Now — €99/mo
         </a>
+        <button onclick="openModal('Starter')" class="block w-full text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3 rounded-full transition text-sm">
+          Book Free Demo
+        </button>
       </div>
 
       <!-- Professional (featured) -->
@@ -447,9 +450,12 @@
           <li class="flex items-center gap-2"><span>✓</span> Priority turnaround</li>
           <li class="flex items-center gap-2"><span>✓</span> Monthly report</li>
         </ul>
-        <a href="#demo" class="block text-center bg-white text-wa hover:bg-gray-100 font-bold py-3.5 rounded-full transition">
-          Book Demo
+        <a href="https://buy.stripe.com/28EeVc4fb9MpgF57JG08g0o" target="_blank" class="block text-center bg-white text-wa hover:bg-gray-100 font-bold py-3.5 rounded-full transition mb-3">
+          Buy Now — €299/mo
         </a>
+        <button onclick="openModal('Professional')" class="block w-full text-center border border-white/40 text-white hover:border-white font-bold py-3 rounded-full transition text-sm">
+          Book Free Demo
+        </button>
       </div>
 
       <!-- Business -->
@@ -470,9 +476,12 @@
           <li class="flex items-center gap-2"><span class="text-wa">✓</span> Priority support</li>
           <li class="flex items-center gap-2"><span class="text-wa">✓</span> Dedicated account manager</li>
         </ul>
-        <a href="#demo" class="block text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3.5 rounded-full transition">
-          Book Demo
+        <a href="https://buy.stripe.com/5kQaEW5jfbUxdsT2pm08g0p" target="_blank" class="block text-center bg-wa hover:bg-waDark text-white font-bold py-3.5 rounded-full transition mb-3">
+          Buy Now — €699/mo
         </a>
+        <button onclick="openModal('Business')" class="block w-full text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3 rounded-full transition text-sm">
+          Book Free Demo
+        </button>
       </div>
     </div>
   </div>
@@ -534,9 +543,9 @@
     <p class="text-xl text-gray-300 mb-12">
       Book a free demo and see your website controlled directly from WhatsApp.
     </p>
-    <a href="mailto:hello@webassist.ai" class="inline-block bg-wa hover:bg-waDark text-white font-black text-xl px-12 py-5 rounded-full transition shadow-2xl shadow-wa/30">
+    <button onclick="openModal()" class="inline-block bg-wa hover:bg-waDark text-white font-black text-xl px-12 py-5 rounded-full transition shadow-2xl shadow-wa/30">
       Book My Demo
-    </a>
+    </button>
     <p class="text-gray-500 mt-6 text-sm">No commitment. 30-minute call. See it live.</p>
   </div>
 </section>
@@ -558,6 +567,152 @@
     </div>
   </div>
 </footer>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+  <!-- Modal box -->
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg p-8 z-10">
+    <!-- Close -->
+    <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-2xl leading-none">&times;</button>
+
+    <!-- Default form view -->
+    <div id="modalForm">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-wa rounded-xl flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-5 h-5"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-black text-xl text-gray-900">Book a Free Demo</h3>
+          <p class="text-sm text-gray-500">We'll reach out within 24 hours</p>
+        </div>
+      </div>
+
+      <form id="demoForm" class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Name *</label>
+            <input type="text" name="name" required placeholder="John Smith"
+              class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-wa/40 focus:border-wa">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Email *</label>
+            <input type="email" name="email" required placeholder="john@company.com"
+              class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-wa/40 focus:border-wa">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Phone</label>
+            <input type="tel" name="phone" placeholder="+34 600 000 000"
+              class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-wa/40 focus:border-wa">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Your Website</label>
+            <input type="url" name="website" placeholder="https://yoursite.com"
+              class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-wa/40 focus:border-wa">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Interested plan</label>
+          <select name="plan" id="planSelect"
+            class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-wa/40 focus:border-wa bg-white">
+            <option value="">Not sure yet</option>
+            <option value="Starter">Starter — €99/month</option>
+            <option value="Professional">Professional — €299/month</option>
+            <option value="Business">Business — €699/month</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Message (optional)</label>
+          <textarea name="message" rows="3" placeholder="Tell us a bit about your website and what you need..."
+            class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-wa/40 focus:border-wa resize-none"></textarea>
+        </div>
+        <button type="submit" id="submitBtn"
+          class="w-full bg-wa hover:bg-waDark text-white font-bold py-3.5 rounded-full transition text-base">
+          Send Demo Request
+        </button>
+        <p class="text-center text-gray-400 text-xs">No commitment. We'll contact you within 24 hours.</p>
+      </form>
+    </div>
+
+    <!-- Success view -->
+    <div id="modalSuccess" class="hidden text-center py-6">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-wa" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 class="font-black text-2xl text-gray-900 mb-2">Request Sent!</h3>
+      <p class="text-gray-500 mb-6">We'll reach out within 24 hours to schedule your demo.</p>
+      <button onclick="closeModal()" class="bg-wa hover:bg-waDark text-white font-bold px-8 py-3 rounded-full transition">Close</button>
+    </div>
+
+    <!-- Error view -->
+    <div id="modalError" class="hidden text-center py-6">
+      <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-red-500 text-3xl">!</span>
+      </div>
+      <h3 class="font-black text-xl text-gray-900 mb-2">Something went wrong</h3>
+      <p class="text-gray-500 mb-6">Please try again or email us directly at <a href="mailto:phillip@dynamicmedia.dk" class="text-wa underline">phillip@dynamicmedia.dk</a></p>
+      <button onclick="document.getElementById('modalError').classList.add('hidden');document.getElementById('modalForm').classList.remove('hidden')" class="border border-gray-200 text-gray-700 font-bold px-8 py-3 rounded-full transition hover:bg-gray-50">Try again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(plan) {
+    if (plan) document.getElementById('planSelect').value = plan;
+    const modal = document.getElementById('bookingModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('bookingModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    // Reset views
+    document.getElementById('modalForm').classList.remove('hidden');
+    document.getElementById('modalSuccess').classList.add('hidden');
+    document.getElementById('modalError').classList.add('hidden');
+    document.getElementById('demoForm').reset();
+  }
+
+  document.getElementById('demoForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = Object.fromEntries(new FormData(this));
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        document.getElementById('modalForm').classList.add('hidden');
+        document.getElementById('modalSuccess').classList.remove('hidden');
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      document.getElementById('modalForm').classList.add('hidden');
+      document.getElementById('modalError').classList.remove('hidden');
+    } finally {
+      btn.textContent = 'Send Demo Request';
+      btn.disabled = false;
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
 
 </body>
 </html>
