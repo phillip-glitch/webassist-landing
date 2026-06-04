@@ -56,14 +56,31 @@
       </div>
     </div>
     <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
-      <a href="#solution" class="hover:text-gray-900 transition">How It Works</a>
-      <a href="#examples" class="hover:text-gray-900 transition">Examples</a>
-      <a href="#pricing" class="hover:text-gray-900 transition">Pricing</a>
-      <a href="#faq" class="hover:text-gray-900 transition">FAQ</a>
+      <a href="#solution" class="hover:text-gray-900 transition" data-i18n="nav_how">How It Works</a>
+      <a href="#examples" class="hover:text-gray-900 transition" data-i18n="nav_examples">Examples</a>
+      <a href="#pricing" class="hover:text-gray-900 transition" data-i18n="nav_pricing">Pricing</a>
+      <a href="#faq" class="hover:text-gray-900 transition" data-i18n="nav_faq">FAQ</a>
     </div>
-    <a href="#demo" class="bg-wa hover:bg-waDark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
-      Book a Free Demo
-    </a>
+    <div class="flex items-center gap-3">
+      <div class="relative" id="langSwitcher">
+        <button onclick="toggleLangMenu()" class="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 border border-gray-200 rounded-full px-3 py-1.5 transition">
+          <span id="langFlag">🇬🇧</span><span id="langCode" class="font-medium">EN</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="langMenu" class="hidden absolute right-0 top-full mt-2 bg-white border border-gray-100 rounded-2xl shadow-xl p-2 w-44 z-50">
+          <button onclick="setLanguage('en')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇬🇧 English</button>
+          <button onclick="setLanguage('da')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇩🇰 Dansk</button>
+          <button onclick="setLanguage('sv')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇸🇪 Svenska</button>
+          <button onclick="setLanguage('no')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇳🇴 Norsk</button>
+          <button onclick="setLanguage('nl')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇳🇱 Nederlands</button>
+          <button onclick="setLanguage('de')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇩🇪 Deutsch</button>
+          <button onclick="setLanguage('es')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇪🇸 Español</button>
+          <button onclick="setLanguage('uk')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇺🇦 Українська</button>
+          <button onclick="setLanguage('pl')" class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-gray-50 text-sm">🇵🇱 Polski</button>
+        </div>
+      </div>
+      <button onclick="openModal()" class="bg-wa hover:bg-waDark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition" data-i18n="nav_cta">Book a Free Demo</button>
+    </div>
   </div>
 </nav>
 
@@ -74,25 +91,25 @@
       <div>
         <div class="inline-flex items-center gap-2 bg-wa/20 border border-wa/30 rounded-full px-4 py-1.5 text-wa text-sm font-medium mb-8 fade-up">
           <span class="w-2 h-2 bg-wa rounded-full animate-pulse"></span>
-          AI-Powered Website Updates
+          <span data-i18n="hero_badge">AI-Powered Website Updates</span>
         </div>
         <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6 fade-up-2">
-          Stop Waiting for Your<br/>
-          <span class="text-wa">Web Developer.</span>
+          <span data-i18n="hero_h1a">Stop Waiting for Your</span><br/>
+          <span class="text-wa" data-i18n="hero_h1b">Web Developer.</span>
         </h1>
-        <p class="text-xl text-gray-300 mb-4 fade-up-3">
-          Send a WhatsApp message and your website gets updated <strong class="text-white">the same day.</strong>
+        <p class="text-xl text-gray-300 mb-4 fade-up-3" data-i18n="hero_sub">
+          Send a WhatsApp message and your website gets updated the same day.
         </p>
-        <p class="text-gray-400 mb-10 fade-up-3">
-          No tickets. &nbsp;No meetings. &nbsp;No technical skills required.
+        <p class="text-gray-400 mb-10 fade-up-3" data-i18n="hero_nosub">
+          No tickets. No meetings. No technical skills required.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 fade-up-3">
-          <button onclick="openModal()" class="bg-wa hover:bg-waDark text-white font-bold px-8 py-4 rounded-full text-lg transition text-center shadow-lg shadow-wa/30">
+          <button onclick="openModal()" class="bg-wa hover:bg-waDark text-white font-bold px-8 py-4 rounded-full text-lg transition text-center shadow-lg shadow-wa/30" data-i18n="hero_cta">
             Book a Free Demo
           </button>
           <a href="#video" class="flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full text-lg transition">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Watch 2-Minute Demo
+            <span data-i18n="hero_watch">Watch 2-Minute Demo</span>
           </a>
         </div>
       </div>
@@ -105,7 +122,7 @@
             <div class="w-10 h-10 rounded-full bg-wa flex items-center justify-center font-bold text-white text-lg">W</div>
             <div>
               <div class="text-white font-semibold text-sm">WebAssist</div>
-              <div class="text-green-200 text-xs">Online</div>
+              <div class="text-green-200 text-xs" data-i18n="chat_online">Online</div>
             </div>
           </div>
           <!-- Chat window -->
@@ -113,29 +130,29 @@
             <!-- Customer message -->
             <div class="flex justify-end">
               <div class="chat-bubble-out px-4 py-2.5 max-w-[85%] shadow-sm">
-                <p class="text-gray-800 text-sm">"Change the price from <strong>€499</strong> to <strong>€399</strong>"</p>
+                <p class="text-gray-800 text-sm" data-i18n="chat_msg1">"Change the price from €499 to €399"</p>
                 <p class="text-gray-400 text-[10px] text-right mt-1">09:41 ✓✓</p>
               </div>
             </div>
             <!-- AI response -->
             <div class="flex justify-start">
               <div class="chat-bubble-in px-4 py-2.5 max-w-[85%] shadow-sm border border-gray-100">
-                <p class="text-gray-800 text-sm">Done ✅</p>
-                <p class="text-gray-600 text-sm mt-1">The price has been updated to <strong>€399</strong>. Your website is live.</p>
+                <p class="text-gray-800 text-sm" data-i18n="chat_reply1a">Done ✅</p>
+                <p class="text-gray-600 text-sm mt-1" data-i18n="chat_reply1b">The price has been updated to €399. Your website is live.</p>
                 <p class="text-gray-400 text-[10px] mt-1">09:42</p>
               </div>
             </div>
             <!-- Customer message 2 -->
             <div class="flex justify-end">
               <div class="chat-bubble-out px-4 py-2.5 max-w-[85%] shadow-sm">
-                <p class="text-gray-800 text-sm">"Add our new team member Sarah, she's a senior consultant"</p>
+                <p class="text-gray-800 text-sm" data-i18n="chat_msg2">"Add our new team member Sarah, she's a senior consultant"</p>
                 <p class="text-gray-400 text-[10px] text-right mt-1">10:15 ✓✓</p>
               </div>
             </div>
             <!-- AI response 2 -->
             <div class="flex justify-start">
               <div class="chat-bubble-in px-4 py-2.5 max-w-[85%] shadow-sm border border-gray-100">
-                <p class="text-gray-800 text-sm">Sarah has been added to your team page ✅</p>
+                <p class="text-gray-800 text-sm" data-i18n="chat_reply2">Sarah has been added to your team page ✅</p>
                 <p class="text-gray-400 text-[10px] mt-1">10:16</p>
               </div>
             </div>
@@ -151,7 +168,7 @@
 <!-- SOCIAL PROOF BAR -->
 <section class="bg-gray-50 border-y border-gray-200 py-5 px-6">
   <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-12 gap-y-3 text-gray-500 text-sm">
-    <span class="font-semibold text-gray-700">Works with:</span>
+    <span class="font-semibold text-gray-700" data-i18n="platforms_label">Works with:</span>
     <span>WordPress</span>
     <span class="text-gray-300">|</span>
     <span>Webflow</span>
@@ -173,10 +190,10 @@
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-        Most business owners are<br/>
-        <span class="text-red-500">trapped behind their website.</span>
+        <span data-i18n="prob_h1a">Most business owners are</span><br/>
+        <span class="text-red-500" data-i18n="prob_h1b">trapped behind their website.</span>
       </h2>
-      <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-i18n="prob_sub">
         Your website should help your business grow. Instead, most companies are dependent on a developer for every little change.
       </p>
     </div>
@@ -184,45 +201,45 @@
       <!-- Pain points -->
       <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
         <div class="text-2xl mb-2">❌</div>
-        <p class="text-sm font-medium text-gray-800">Wait days for small updates</p>
+        <p class="text-sm font-medium text-gray-800" data-i18n="pain1">Wait days for small updates</p>
       </div>
       <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
         <div class="text-2xl mb-2">❌</div>
-        <p class="text-sm font-medium text-gray-800">Pay developers for simple changes</p>
+        <p class="text-sm font-medium text-gray-800" data-i18n="pain2">Pay developers for simple changes</p>
       </div>
       <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
         <div class="text-2xl mb-2">❌</div>
-        <p class="text-sm font-medium text-gray-800">Don't know how to use WordPress</p>
+        <p class="text-sm font-medium text-gray-800" data-i18n="pain3">Don't know how to use WordPress</p>
       </div>
       <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
         <div class="text-2xl mb-2">❌</div>
-        <p class="text-sm font-medium text-gray-800">Need a laptop for every update</p>
+        <p class="text-sm font-medium text-gray-800" data-i18n="pain4">Need a laptop for every update</p>
       </div>
       <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
         <div class="text-2xl mb-2">❌</div>
-        <p class="text-sm font-medium text-gray-800">Technical language and delays</p>
+        <p class="text-sm font-medium text-gray-800" data-i18n="pain5">Technical language and delays</p>
       </div>
     </div>
     <!-- Before/After comparison -->
     <div class="grid md:grid-cols-2 gap-6">
       <div class="bg-red-50 rounded-3xl p-8 border border-red-100">
-        <h3 class="font-bold text-red-600 mb-5 text-lg">Before WebAssist</h3>
+        <h3 class="font-bold text-red-600 mb-5 text-lg" data-i18n="before_title">Before WebAssist</h3>
         <ul class="space-y-3 text-gray-700">
-          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Email your developer and wait</li>
-          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Get a quote for a 5-minute change</li>
-          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Log into WordPress and get confused</li>
-          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> 2–5 day turnaround for small updates</li>
-          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> Your business suffers in the meantime</li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> <span data-i18n="before1">Email your developer and wait</span></li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> <span data-i18n="before2">Get a quote for a 5-minute change</span></li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> <span data-i18n="before3">Log into WordPress and get confused</span></li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> <span data-i18n="before4">2–5 day turnaround for small updates</span></li>
+          <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✗</span> <span data-i18n="before5">Your business suffers in the meantime</span></li>
         </ul>
       </div>
       <div class="bg-green-50 rounded-3xl p-8 border border-green-100">
-        <h3 class="font-bold text-wa mb-5 text-lg">After WebAssist</h3>
+        <h3 class="font-bold text-wa mb-5 text-lg" data-i18n="after_title">After WebAssist</h3>
         <ul class="space-y-3 text-gray-700">
-          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> Send a WhatsApp message</li>
-          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> AI processes and applies the update</li>
-          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> Website goes live same day</li>
-          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> Confirmation sent back to you</li>
-          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> No technical skills needed</li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> <span data-i18n="after1">Send a WhatsApp message</span></li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> <span data-i18n="after2">AI processes and applies the update</span></li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> <span data-i18n="after3">Website goes live same day</span></li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> <span data-i18n="after4">Confirmation sent back to you</span></li>
+          <li class="flex items-start gap-3"><span class="text-wa mt-0.5">✓</span> <span data-i18n="after5">No technical skills needed</span></li>
         </ul>
       </div>
     </div>
@@ -232,11 +249,11 @@
 <!-- SECTION 3: THE SOLUTION -->
 <section class="py-24 px-6 bg-gray-950 text-white" id="solution">
   <div class="max-w-5xl mx-auto text-center">
-    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">The Solution</p>
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4" data-i18n="sol_badge">The Solution</p>
     <h2 class="text-4xl md:text-5xl font-black mb-6">
-      Manage your website<br/>from <span class="text-wa">WhatsApp.</span>
+      <span data-i18n="sol_h1">Manage your website</span><br/><span class="text-wa" data-i18n="sol_h2">from WhatsApp.</span>
     </h2>
-    <p class="text-gray-400 text-lg mb-16 max-w-xl mx-auto">
+    <p class="text-gray-400 text-lg mb-16 max-w-xl mx-auto" data-i18n="sol_sub">
       No backend. No logins. No developer needed. Just send a message.
     </p>
 
@@ -245,28 +262,24 @@
         <div class="w-12 h-12 bg-wa/10 rounded-2xl flex items-center justify-center mb-5">
           <span class="text-wa text-2xl font-black">1</span>
         </div>
-        <h3 class="font-bold text-xl mb-3">Send a message</h3>
-        <p class="text-gray-400 mb-4">Type your update naturally in WhatsApp — just like texting a colleague.</p>
-        <div class="chat-bubble-out p-3 rounded-2xl rounded-bl-sm text-sm text-gray-800">
-          "Add a new team member"
-        </div>
+        <h3 class="font-bold text-xl mb-3" data-i18n="step1_title">Send a message</h3>
+        <p class="text-gray-400 mb-4" data-i18n="step1_desc">Type your update naturally in WhatsApp — just like texting a colleague.</p>
+        <div class="chat-bubble-out p-3 rounded-2xl rounded-bl-sm text-sm text-gray-800" data-i18n="step1_bubble">"Add a new team member"</div>
       </div>
       <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left">
         <div class="w-12 h-12 bg-wa/10 rounded-2xl flex items-center justify-center mb-5">
           <span class="text-wa text-2xl font-black">2</span>
         </div>
-        <h3 class="font-bold text-xl mb-3">AI handles the update</h3>
-        <p class="text-gray-400">Our AI reads the request, finds the right section on your website, and applies the change — images, text and layout.</p>
+        <h3 class="font-bold text-xl mb-3" data-i18n="step2_title">AI handles the update</h3>
+        <p class="text-gray-400" data-i18n="step2_desc">Our AI reads the request, finds the right section on your website, and applies the change — images, text and layout.</p>
       </div>
       <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left">
         <div class="w-12 h-12 bg-wa/10 rounded-2xl flex items-center justify-center mb-5">
           <span class="text-wa text-2xl font-black">3</span>
         </div>
-        <h3 class="font-bold text-xl mb-3">Website goes live</h3>
-        <p class="text-gray-400 mb-4">Usually the same day. You get a confirmation message back.</p>
-        <div class="chat-bubble-in p-3 rounded-2xl rounded-tl-sm text-sm text-gray-800">
-          "Done ✅ Your website is live."
-        </div>
+        <h3 class="font-bold text-xl mb-3" data-i18n="step3_title">Website goes live</h3>
+        <p class="text-gray-400 mb-4" data-i18n="step3_desc">Usually the same day. You get a confirmation message back.</p>
+        <div class="chat-bubble-in p-3 rounded-2xl rounded-tl-sm text-sm text-gray-800" data-i18n="step3_bubble">"Done ✅ Your website is live."</div>
       </div>
     </div>
   </div>
@@ -275,52 +288,50 @@
 <!-- SECTION 4: LIVE EXAMPLES -->
 <section class="py-24 px-6 bg-white" id="examples">
   <div class="max-w-5xl mx-auto text-center">
-    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">What Can You Update?</p>
-    <h2 class="text-4xl md:text-5xl font-black mb-6">
-      Send it. We'll handle it.
-    </h2>
-    <p class="text-gray-500 text-lg mb-14">If you can describe it in a message, we can update it on your website.</p>
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4" data-i18n="ex_badge">What Can You Update?</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6" data-i18n="ex_h1">Send it. We'll handle it.</h2>
+    <p class="text-gray-500 text-lg mb-14" data-i18n="ex_sub">If you can describe it in a message, we can update it on your website.</p>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">💰</div>
-        <p class="text-sm font-semibold text-gray-800">Change prices</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex1">Change prices</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">📋</div>
-        <p class="text-sm font-semibold text-gray-800">Update services</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex2">Update services</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">✏️</div>
-        <p class="text-sm font-semibold text-gray-800">Fix spelling mistakes</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex3">Fix spelling mistakes</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">🖼️</div>
-        <p class="text-sm font-semibold text-gray-800">Replace images</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex4">Replace images</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">⭐</div>
-        <p class="text-sm font-semibold text-gray-800">Add testimonials</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex5">Add testimonials</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">👤</div>
-        <p class="text-sm font-semibold text-gray-800">Add team members</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex6">Add team members</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">📞</div>
-        <p class="text-sm font-semibold text-gray-800">Change contact details</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex7">Change contact details</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">🚀</div>
-        <p class="text-sm font-semibold text-gray-800">Create landing pages</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex8">Create landing pages</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">🕐</div>
-        <p class="text-sm font-semibold text-gray-800">Update opening hours</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex9">Update opening hours</p>
       </div>
       <div class="bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-wa/30 rounded-2xl p-4 transition group cursor-default">
         <div class="text-2xl mb-2">📝</div>
-        <p class="text-sm font-semibold text-gray-800">Add blog posts</p>
+        <p class="text-sm font-semibold text-gray-800" data-i18n="ex10">Add blog posts</p>
       </div>
     </div>
   </div>
@@ -329,53 +340,51 @@
 <!-- SECTION 5: WHO IS THIS FOR -->
 <section class="py-24 px-6 bg-gray-50" id="who">
   <div class="max-w-5xl mx-auto text-center">
-    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">Who Is This For?</p>
-    <h2 class="text-4xl md:text-5xl font-black mb-6">
-      Perfect for businesses that update<br/>their website regularly.
-    </h2>
-    <p class="text-gray-500 text-lg mb-14">If you have a website and need to update it more than once a month — this is for you.</p>
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4" data-i18n="who_badge">Who Is This For?</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6" data-i18n="who_h1">Perfect for businesses that update their website regularly.</h2>
+    <p class="text-gray-500 text-lg mb-14" data-i18n="who_sub">If you have a website and need to update it more than once a month — this is for you.</p>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
       <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
         <div class="text-3xl">🏠</div>
         <div>
-          <h4 class="font-bold text-gray-900">Real Estate Agencies</h4>
-          <p class="text-gray-500 text-sm">New listings, price changes, agent updates</p>
+          <h4 class="font-bold text-gray-900" data-i18n="who1_title">Real Estate Agencies</h4>
+          <p class="text-gray-500 text-sm" data-i18n="who1_desc">New listings, price changes, agent updates</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
         <div class="text-3xl">🍽️</div>
         <div>
-          <h4 class="font-bold text-gray-900">Restaurants</h4>
-          <p class="text-gray-500 text-sm">Menus, hours, seasonal promotions</p>
+          <h4 class="font-bold text-gray-900" data-i18n="who2_title">Restaurants</h4>
+          <p class="text-gray-500 text-sm" data-i18n="who2_desc">Menus, hours, seasonal promotions</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
         <div class="text-3xl">🏥</div>
         <div>
-          <h4 class="font-bold text-gray-900">Clinics</h4>
-          <p class="text-gray-500 text-sm">Services, staff, booking information</p>
+          <h4 class="font-bold text-gray-900" data-i18n="who3_title">Clinics</h4>
+          <p class="text-gray-500 text-sm" data-i18n="who3_desc">Services, staff, booking information</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
         <div class="text-3xl">⚖️</div>
         <div>
-          <h4 class="font-bold text-gray-900">Law Firms</h4>
-          <p class="text-gray-500 text-sm">Attorney profiles, practice areas, news</p>
+          <h4 class="font-bold text-gray-900" data-i18n="who4_title">Law Firms</h4>
+          <p class="text-gray-500 text-sm" data-i18n="who4_desc">Attorney profiles, practice areas, news</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
         <div class="text-3xl">💼</div>
         <div>
-          <h4 class="font-bold text-gray-900">Consultants</h4>
-          <p class="text-gray-500 text-sm">Services, case studies, availability</p>
+          <h4 class="font-bold text-gray-900" data-i18n="who5_title">Consultants</h4>
+          <p class="text-gray-500 text-sm" data-i18n="who5_desc">Services, case studies, availability</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm text-left flex items-center gap-4">
         <div class="text-3xl">🛠️</div>
         <div>
-          <h4 class="font-bold text-gray-900">Local Service Businesses</h4>
-          <p class="text-gray-500 text-sm">Offers, contact info, testimonials</p>
+          <h4 class="font-bold text-gray-900" data-i18n="who6_title">Local Service Businesses</h4>
+          <p class="text-gray-500 text-sm" data-i18n="who6_desc">Offers, contact info, testimonials</p>
         </div>
       </div>
     </div>
@@ -385,16 +394,16 @@
 <!-- SECTION 6: DEMO VIDEO -->
 <section class="py-24 px-6 bg-white" id="video">
   <div class="max-w-4xl mx-auto text-center">
-    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">See It In Action</p>
-    <h2 class="text-4xl md:text-5xl font-black mb-6">Watch It In Action</h2>
-    <p class="text-gray-500 text-lg mb-12">See how a business owner updates their website in under 60 seconds — just by sending a WhatsApp message.</p>
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4" data-i18n="vid_badge">See It In Action</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6" data-i18n="vid_h1">Watch It In Action</h2>
+    <p class="text-gray-500 text-lg mb-12" data-i18n="vid_sub">See how a business owner updates their website in under 60 seconds — just by sending a WhatsApp message.</p>
     <!-- Video placeholder -->
     <div class="bg-gray-900 rounded-3xl aspect-video flex items-center justify-center shadow-2xl border border-gray-800 cursor-pointer group relative overflow-hidden">
       <div class="absolute inset-0 bg-wa/5 group-hover:bg-wa/10 transition"></div>
       <div class="w-20 h-20 bg-wa rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white ml-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       </div>
-      <p class="absolute bottom-6 text-gray-400 text-sm">2-minute demo — no sign-up required</p>
+      <p class="absolute bottom-6 text-gray-400 text-sm" data-i18n="vid_note">2-minute demo — no sign-up required</p>
     </div>
   </div>
 </section>
@@ -402,88 +411,88 @@
 <!-- SECTION 7: PRICING -->
 <section class="py-24 px-6 bg-gray-950 text-white" id="pricing">
   <div class="max-w-5xl mx-auto text-center">
-    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">Pricing</p>
-    <h2 class="text-4xl md:text-5xl font-black mb-6">Simple, transparent pricing.</h2>
-    <p class="text-gray-400 text-lg mb-16">All plans include onboarding, WhatsApp setup, and a dedicated AI assistant for your website.</p>
+    <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4" data-i18n="price_badge">Pricing</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-6" data-i18n="price_h1">Simple, transparent pricing.</h2>
+    <p class="text-gray-400 text-lg mb-16" data-i18n="price_sub">All plans include onboarding, WhatsApp setup, and a dedicated AI assistant for your website.</p>
 
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Starter -->
       <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left flex flex-col">
         <div class="mb-6">
-          <h3 class="font-bold text-xl mb-1">Starter</h3>
-          <p class="text-gray-500 text-sm mb-4">For businesses with occasional updates</p>
+          <h3 class="font-bold text-xl mb-1" data-i18n="starter_title">Starter</h3>
+          <p class="text-gray-500 text-sm mb-4" data-i18n="starter_desc">For businesses with occasional updates</p>
           <div class="flex items-end gap-1">
             <span class="text-5xl font-black">€99</span>
-            <span class="text-gray-400 mb-2">/month</span>
+            <span class="text-gray-400 mb-2" data-i18n="per_month">/month</span>
           </div>
-          <p class="text-gray-500 text-sm mt-1">+ €650 setup fee</p>
+          <p class="text-gray-500 text-sm mt-1" data-i18n="setup_650">+ €650 setup fee</p>
         </div>
         <ul class="space-y-3 text-gray-300 text-sm mb-8 flex-1">
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Up to 10 updates/month</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> WhatsApp support</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Text & price changes</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Same-day turnaround</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="starter_f1">Up to 10 updates/month</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="starter_f2">WhatsApp support</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="starter_f3">Text & price changes</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="starter_f4">Same-day turnaround</span></li>
         </ul>
         <a href="https://buy.stripe.com/8x2cN49zvgaN4Wn4xu08g0n" target="_blank" class="block text-center bg-wa hover:bg-waDark text-white font-bold py-3.5 rounded-full transition mb-3">
           Buy Now — €99/mo
         </a>
         <button onclick="openModal('Starter')" class="block w-full text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3 rounded-full transition text-sm">
-          Book Free Demo
+          <span data-i18n="btn_demo">Book Free Demo</span>
         </button>
       </div>
 
       <!-- Professional (featured) -->
       <div class="bg-wa rounded-3xl p-8 text-left flex flex-col relative shadow-2xl shadow-wa/20 border-2 border-wa">
         <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-wa text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
-          Most Popular
+          <span data-i18n="pro_popular">Most Popular</span>
         </div>
         <div class="mb-6">
-          <h3 class="font-bold text-xl mb-1">Professional</h3>
-          <p class="text-white/70 text-sm mb-4">For active businesses</p>
+          <h3 class="font-bold text-xl mb-1" data-i18n="pro_title">Professional</h3>
+          <p class="text-white/70 text-sm mb-4" data-i18n="pro_desc">For active businesses</p>
           <div class="flex items-end gap-1">
             <span class="text-5xl font-black">€299</span>
-            <span class="text-white/70 mb-2">/month</span>
+            <span class="text-white/70 mb-2" data-i18n="per_month">/month</span>
           </div>
-          <p class="text-white/60 text-sm mt-1">+ €999 setup fee</p>
+          <p class="text-white/60 text-sm mt-1" data-i18n="setup_999">+ €999 setup fee</p>
         </div>
         <ul class="space-y-3 text-white/90 text-sm mb-8 flex-1">
-          <li class="flex items-center gap-2"><span>✓</span> Unlimited small changes</li>
-          <li class="flex items-center gap-2"><span>✓</span> Image replacements</li>
-          <li class="flex items-center gap-2"><span>✓</span> SEO text updates</li>
-          <li class="flex items-center gap-2"><span>✓</span> Priority turnaround</li>
-          <li class="flex items-center gap-2"><span>✓</span> Monthly report</li>
+          <li class="flex items-center gap-2"><span>✓</span> <span data-i18n="pro_f1">Unlimited small changes</span></li>
+          <li class="flex items-center gap-2"><span>✓</span> <span data-i18n="pro_f2">Image replacements</span></li>
+          <li class="flex items-center gap-2"><span>✓</span> <span data-i18n="pro_f3">SEO text updates</span></li>
+          <li class="flex items-center gap-2"><span>✓</span> <span data-i18n="pro_f4">Priority turnaround</span></li>
+          <li class="flex items-center gap-2"><span>✓</span> <span data-i18n="pro_f5">Monthly report</span></li>
         </ul>
         <a href="https://buy.stripe.com/28EeVc4fb9MpgF57JG08g0o" target="_blank" class="block text-center bg-white text-wa hover:bg-gray-100 font-bold py-3.5 rounded-full transition mb-3">
           Buy Now — €299/mo
         </a>
         <button onclick="openModal('Professional')" class="block w-full text-center border border-white/40 text-white hover:border-white font-bold py-3 rounded-full transition text-sm">
-          Book Free Demo
+          <span data-i18n="btn_demo">Book Free Demo</span>
         </button>
       </div>
 
       <!-- Business -->
       <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 text-left flex flex-col">
         <div class="mb-6">
-          <h3 class="font-bold text-xl mb-1">Business</h3>
-          <p class="text-gray-500 text-sm mb-4">For agencies and fast-moving businesses</p>
+          <h3 class="font-bold text-xl mb-1" data-i18n="biz_title">Business</h3>
+          <p class="text-gray-500 text-sm mb-4" data-i18n="biz_desc">For agencies and fast-moving businesses</p>
           <div class="flex items-end gap-1">
             <span class="text-5xl font-black">€699</span>
-            <span class="text-gray-400 mb-2">/month</span>
+            <span class="text-gray-400 mb-2" data-i18n="per_month">/month</span>
           </div>
-          <p class="text-gray-500 text-sm mt-1">+ €1,500 setup fee</p>
+          <p class="text-gray-500 text-sm mt-1" data-i18n="setup_1500">+ €1,500 setup fee</p>
         </div>
         <ul class="space-y-3 text-gray-300 text-sm mb-8 flex-1">
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Everything in Professional</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> New landing pages</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Advanced content updates</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Priority support</li>
-          <li class="flex items-center gap-2"><span class="text-wa">✓</span> Dedicated account manager</li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="biz_f1">Everything in Professional</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="biz_f2">New landing pages</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="biz_f3">Advanced content updates</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="biz_f4">Priority support</span></li>
+          <li class="flex items-center gap-2"><span class="text-wa">✓</span> <span data-i18n="biz_f5">Dedicated account manager</span></li>
         </ul>
         <a href="https://buy.stripe.com/5kQaEW5jfbUxdsT2pm08g0p" target="_blank" class="block text-center bg-wa hover:bg-waDark text-white font-bold py-3.5 rounded-full transition mb-3">
           Buy Now — €699/mo
         </a>
         <button onclick="openModal('Business')" class="block w-full text-center border border-wa text-wa hover:bg-wa hover:text-white font-bold py-3 rounded-full transition text-sm">
-          Book Free Demo
+          <span data-i18n="btn_demo">Book Free Demo</span>
         </button>
       </div>
     </div>
@@ -494,44 +503,44 @@
 <section class="py-24 px-6 bg-white" id="faq">
   <div class="max-w-3xl mx-auto">
     <div class="text-center mb-16">
-      <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4">FAQ</p>
-      <h2 class="text-4xl md:text-5xl font-black">Common Questions</h2>
+      <p class="text-wa font-semibold uppercase tracking-widest text-sm mb-4" data-i18n="faq_badge">FAQ</p>
+      <h2 class="text-4xl md:text-5xl font-black" data-i18n="faq_h1">Common Questions</h2>
     </div>
     <div class="space-y-4">
       <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
-          Can you work with my existing website?
+          <span data-i18n="faq_q1">Can you work with my existing website?</span>
           <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
         </summary>
-        <p class="px-6 pb-6 text-gray-600">Yes. We work with WordPress, Webflow, Shopify, Wix, Squarespace, and most custom-built websites. During onboarding we connect to your existing site — no migration needed.</p>
+        <p class="px-6 pb-6 text-gray-600" data-i18n="faq_a1">Yes. We work with WordPress, Webflow, Shopify, Wix, Squarespace, and most custom-built websites. During onboarding we connect to your existing site — no migration needed.</p>
       </details>
       <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
-          How fast are updates completed?
+          <span data-i18n="faq_q2">How fast are updates completed?</span>
           <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
         </summary>
-        <p class="px-6 pb-6 text-gray-600">Most updates are completed the same day, often within a few hours. Complex changes like new landing pages may take 24–48 hours. You always receive a confirmation message when your website is live.</p>
+        <p class="px-6 pb-6 text-gray-600" data-i18n="faq_a2">Most updates are completed the same day, often within a few hours. Complex changes like new landing pages may take 24–48 hours. You always receive a confirmation message when your website is live.</p>
       </details>
       <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
-          Do I need technical skills?
+          <span data-i18n="faq_q3">Do I need technical skills?</span>
           <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
         </summary>
-        <p class="px-6 pb-6 text-gray-600">Not at all. If you can send a WhatsApp message, you can use WebAssist. There's no login, no backend, no technical knowledge required. Just type what you want changed.</p>
+        <p class="px-6 pb-6 text-gray-600" data-i18n="faq_a3">Not at all. If you can send a WhatsApp message, you can use WebAssist. There's no login, no backend, no technical knowledge required. Just type what you want changed.</p>
       </details>
       <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
-          Can I cancel anytime?
+          <span data-i18n="faq_q4">Can I cancel anytime?</span>
           <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
         </summary>
-        <p class="px-6 pb-6 text-gray-600">Yes. Monthly subscriptions can be cancelled with 30 days notice. There are no long-term contracts on monthly plans. Annual plans are billed upfront.</p>
+        <p class="px-6 pb-6 text-gray-600" data-i18n="faq_a4">Yes. Monthly subscriptions can be cancelled with 30 days notice. There are no long-term contracts on monthly plans. Annual plans are billed upfront.</p>
       </details>
       <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
         <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 list-none">
-          What happens if I need bigger changes?
+          <span data-i18n="faq_q5">What happens if I need bigger changes?</span>
           <span class="text-wa group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
         </summary>
-        <p class="px-6 pb-6 text-gray-600">For major redesigns or entirely new websites, we can discuss a custom project quote. Our Business plan covers most advanced changes including new landing pages, blog posts, and full content overhauls.</p>
+        <p class="px-6 pb-6 text-gray-600" data-i18n="faq_a5">For major redesigns or entirely new websites, we can discuss a custom project quote. Our Business plan covers most advanced changes including new landing pages, blog posts, and full content overhauls.</p>
       </details>
     </div>
   </div>
@@ -541,15 +550,15 @@
 <section class="py-24 px-6 gradient-hero text-white" id="demo">
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-5xl md:text-6xl font-black mb-6">
-      Never wait for a web<br/>developer <span class="text-wa">again.</span>
+      <span data-i18n="final_h1a">Never wait for a web developer</span><br/><span class="text-wa" data-i18n="final_h1b">again.</span>
     </h2>
-    <p class="text-xl text-gray-300 mb-12">
+    <p class="text-xl text-gray-300 mb-12" data-i18n="final_sub">
       Book a free demo and see your website controlled directly from WhatsApp.
     </p>
-    <button onclick="openModal()" class="inline-block bg-wa hover:bg-waDark text-white font-black text-xl px-12 py-5 rounded-full transition shadow-2xl shadow-wa/30">
+    <button onclick="openModal()" class="inline-block bg-wa hover:bg-waDark text-white font-black text-xl px-12 py-5 rounded-full transition shadow-2xl shadow-wa/30" data-i18n="final_cta">
       Book My Demo
     </button>
-    <p class="text-gray-500 mt-6 text-sm">No commitment. 30-minute call. See it live.</p>
+    <p class="text-gray-500 mt-6 text-sm" data-i18n="final_note">No commitment. 30-minute call. See it live.</p>
   </div>
 </section>
 
@@ -562,14 +571,16 @@
       </div>
       <span class="text-white font-bold">WebAssist</span>
     </div>
-    <p class="text-sm">&copy; 2026 WebAssist. All rights reserved.</p>
+    <p class="text-sm" data-i18n="footer_copy">&copy; 2026 WebAssist. All rights reserved.</p>
     <div class="flex gap-6 text-sm">
-      <a href="#" class="hover:text-white transition">Privacy</a>
-      <a href="#" class="hover:text-white transition">Terms</a>
-      <a href="mailto:hello@webassist.ai" class="hover:text-white transition">Contact</a>
+      <a href="#" class="hover:text-white transition" data-i18n="footer_privacy">Privacy</a>
+      <a href="#" class="hover:text-white transition" data-i18n="footer_terms">Terms</a>
+      <a href="mailto:phillip@dynamicmedia.dk" class="hover:text-white transition" data-i18n="footer_contact">Contact</a>
     </div>
   </div>
 </footer>
+
+<script src="/translations.js"></script>
 
 <!-- BOOKING MODAL -->
 <div id="bookingModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
