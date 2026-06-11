@@ -1,3 +1,14 @@
+const PRICING = {
+  en:  { s:'€99',   p:'€299',   b:'€699',   su:'+ €650 setup fee',        pu:'+ €999 setup fee',        bu:'+ €1,500 setup fee',        per:'/mo',    buy_s:'Buy Now — €99/mo',        buy_p:'Buy Now — €299/mo',        buy_b:'Buy Now — €699/mo',        modal_s:'Starter — €99/mo',        modal_p:'Professional — €299/mo',        modal_b:'Business — €699/mo' },
+  da:  { s:'749 kr', p:'2.249 kr', b:'5.249 kr', su:'+ 4.849 kr opsætningsgebyr', pu:'+ 7.449 kr opsætningsgebyr', bu:'+ 11.199 kr opsætningsgebyr', per:'/md',    buy_s:'Køb nu — 749 kr/md',      buy_p:'Køb nu — 2.249 kr/md',      buy_b:'Køb nu — 5.249 kr/md',      modal_s:'Starter — 749 kr/md',      modal_p:'Professional — 2.249 kr/md',      modal_b:'Business — 5.249 kr/md' },
+  sv:  { s:'1.099 kr', p:'3.319 kr', b:'7.749 kr', su:'+ 7.199 kr uppstartskostnad', pu:'+ 10.999 kr uppstartskostnad', bu:'+ 16.499 kr uppstartskostnad', per:'/mån', buy_s:'Köp nu — 1.099 kr/mån',   buy_p:'Köp nu — 3.319 kr/mån',   buy_b:'Köp nu — 7.749 kr/mån',   modal_s:'Starter — 1.099 kr/mån',   modal_p:'Professional — 3.319 kr/mån',   modal_b:'Business — 7.749 kr/mån' },
+  no:  { s:'1.149 kr', p:'3.449 kr', b:'8.099 kr', su:'+ 7.499 kr oppsettgebyr',    pu:'+ 11.499 kr oppsettgebyr',    bu:'+ 17.249 kr oppsettgebyr',    per:'/mnd',   buy_s:'Kjøp nå — 1.149 kr/mnd',  buy_p:'Kjøp nå — 3.449 kr/mnd',  buy_b:'Kjøp nå — 8.099 kr/mnd',  modal_s:'Starter — 1.149 kr/mnd',  modal_p:'Professional — 3.449 kr/mnd',  modal_b:'Business — 8.099 kr/mnd' },
+  nl:  { s:'€99',   p:'€299',   b:'€699',   su:'+ €650 installatiekosten',  pu:'+ €999 installatiekosten',  bu:'+ €1.500 installatiekosten',  per:'/mnd',   buy_s:'Kopen — €99/mnd',         buy_p:'Kopen — €299/mnd',         buy_b:'Kopen — €699/mnd',         modal_s:'Starter — €99/mnd',        modal_p:'Professional — €299/mnd',        modal_b:'Business — €699/mnd' },
+  de:  { s:'€99',   p:'€299',   b:'€699',   su:'+ €650 Einrichtungsgebühr', pu:'+ €999 Einrichtungsgebühr', bu:'+ €1.500 Einrichtungsgebühr', per:'/Monat', buy_s:'Jetzt kaufen — €99/Mo.',  buy_p:'Jetzt kaufen — €299/Mo.',  buy_b:'Jetzt kaufen — €699/Mo.',  modal_s:'Starter — €99/Mo.',        modal_p:'Professional — €299/Mo.',        modal_b:'Business — €699/Mo.' },
+  es:  { s:'€99',   p:'€299',   b:'€699',   su:'+ €650 cuota de configuración', pu:'+ €999 cuota de configuración', bu:'+ €1.500 cuota de configuración', per:'/mes', buy_s:'Comprar — €99/mes',       buy_p:'Comprar — €299/mes',       buy_b:'Comprar — €699/mes',       modal_s:'Starter — €99/mes',        modal_p:'Professional — €299/mes',        modal_b:'Business — €699/mes' },
+  uk:  { s:'€99',   p:'€299',   b:'€699',   su:'+ €650 плата за налаштування', pu:'+ €999 плата за налаштування', bu:'+ €1.500 плата за налаштування', per:'/міс', buy_s:'Купити — €99/міс',        buy_p:'Купити — €299/міс',        buy_b:'Купити — €699/міс',        modal_s:'Starter — €99/міс',        modal_p:'Professional — €299/міс',        modal_b:'Business — €699/міс' },
+  pl:  { s:'429 zł', p:'1.279 zł', b:'2.979 zł', su:'+ 2.762 zł opłata startowa', pu:'+ 4.246 zł opłata startowa', bu:'+ 6.375 zł opłata startowa', per:'/mies.', buy_s:'Kup teraz — 429 zł/mies.', buy_p:'Kup teraz — 1.279 zł/mies.', buy_b:'Kup teraz — 2.979 zł/mies.', modal_s:'Starter — 429 zł/mies.', modal_p:'Professional — 1.279 zł/mies.', modal_b:'Business — 2.979 zł/mies.' }
+};
 const T = {
 en:{
   nav_how:"How It Works",nav_examples:"Examples",nav_pricing:"Pricing",nav_faq:"FAQ",nav_cta:"Book a Free Demo",
@@ -56,7 +67,9 @@ en:{
   final_h1a:"Never wait for a web developer",final_h1b:"again.",
   final_sub:"Book a free demo and see your website controlled directly from WhatsApp.",
   final_cta:"Book My Demo",final_note:"No commitment. 30-minute call. See it live.",
-  footer_copy:"© 2026 WebAssist. All rights reserved.",footer_privacy:"Privacy",footer_terms:"Terms",footer_contact:"Contact"
+  footer_copy:"© 2026 WebAssist. All rights reserved.",footer_privacy:"Privacy",footer_terms:"Terms",footer_contact:"Contact",
+  contact_h2:"Get in Touch",contact_sub:"Have a question? Send us a message and we'll get back to you within 24 hours.",contact_name:"Your Name",contact_email_label:"Email Address",contact_msg:"Message",contact_send:"Send Message",contact_ok:"Message sent! We'll reply within 24 hours.",contact_err:"Something went wrong. Please try again.",contact_name_placeholder:"Jane Smith",contact_email_placeholder:"jane@company.com",contact_msg_placeholder:"How can we help you?",
+  modal_title:"Book a Free Demo",modal_name:"Full Name",modal_email:"Email Address",modal_phone:"Phone Number (optional)",modal_website:"Your Website URL",modal_plan:"Interested Plan",modal_plan_none:"— Select a plan —",modal_plan_starter:"Starter — €99/mo",modal_plan_pro:"Professional — €299/mo",modal_plan_business:"Business — €699/mo",modal_message:"Message (optional)",modal_submit:"Send Demo Request",modal_sending:"Sending...",modal_note:"No commitment. We'll contact you within 24 hours.",modal_success_h:"Request Sent!",modal_success_p:"We'll reach out within 24 hours to schedule your demo.",modal_close:"Close",modal_error_h:"Something went wrong",modal_error_p:"Please try again or email us directly at",modal_retry:"Try again"
 },
 da:{
   nav_how:"Sådan virker det",nav_examples:"Eksempler",nav_pricing:"Priser",nav_faq:"FAQ",nav_cta:"Book gratis demo",
@@ -115,7 +128,9 @@ da:{
   final_h1a:"Vent aldrig på en webudvikler",final_h1b:"igen.",
   final_sub:"Book en gratis demo og se din hjemmeside styret direkte fra WhatsApp.",
   final_cta:"Book min demo",final_note:"Ingen binding. 30-minutters opkald. Se det live.",
-  footer_copy:"© 2026 WebAssist. Alle rettigheder forbeholdes.",footer_privacy:"Privatliv",footer_terms:"Vilkår",footer_contact:"Kontakt"
+  footer_copy:"© 2026 WebAssist. Alle rettigheder forbeholdes.",footer_privacy:"Privatliv",footer_terms:"Vilkår",footer_contact:"Kontakt",
+  contact_h2:"Kontakt os",contact_sub:"Har du et spørgsmål? Send os en besked, og vi vender tilbage inden for 24 timer.",contact_name:"Dit navn",contact_email_label:"E-mailadresse",contact_msg:"Besked",contact_send:"Send besked",contact_ok:"Besked sendt! Vi svarer inden for 24 timer.",contact_err:"Noget gik galt. Prøv igen.",contact_name_placeholder:"Jens Jensen",contact_email_placeholder:"jens@virksomhed.dk",contact_msg_placeholder:"Hvordan kan vi hjælpe dig?",
+  modal_title:"Book en gratis demo",modal_name:"Fulde navn",modal_email:"E-mailadresse",modal_phone:"Telefonnummer (valgfrit)",modal_website:"Din hjemmeside-URL",modal_plan:"Interesseret plan",modal_plan_none:"— Vælg en plan —",modal_plan_starter:"Starter — €99/md",modal_plan_pro:"Professional — €299/md",modal_plan_business:"Business — €699/md",modal_message:"Besked (valgfrit)",modal_submit:"Send demo-anmodning",modal_sending:"Sender...",modal_note:"Ingen binding. Vi kontakter dig inden for 24 timer.",modal_success_h:"Anmodning sendt!",modal_success_p:"Vi kontakter dig inden for 24 timer for at planlægge din demo.",modal_close:"Luk",modal_error_h:"Noget gik galt",modal_error_p:"Prøv igen eller send os en e-mail direkte på",modal_retry:"Prøv igen"
 },
 sv:{
   nav_how:"Hur det fungerar",nav_examples:"Exempel",nav_pricing:"Priser",nav_faq:"FAQ",nav_cta:"Boka gratis demo",
@@ -174,7 +189,9 @@ sv:{
   final_h1a:"Vänta aldrig på en webbutvecklare",final_h1b:"igen.",
   final_sub:"Boka en gratis demo och se din webbplats styrd direkt från WhatsApp.",
   final_cta:"Boka min demo",final_note:"Ingen bindning. 30-minuterssamtal. Se det live.",
-  footer_copy:"© 2026 WebAssist. Alla rättigheter förbehållna.",footer_privacy:"Integritet",footer_terms:"Villkor",footer_contact:"Kontakt"
+  footer_copy:"© 2026 WebAssist. Alla rättigheter förbehållna.",footer_privacy:"Integritet",footer_terms:"Villkor",footer_contact:"Kontakt",
+  contact_h2:"Kontakta oss",contact_sub:"Har du en fråga? Skicka ett meddelande så återkommer vi inom 24 timmar.",contact_name:"Ditt namn",contact_email_label:"E-postadress",contact_msg:"Meddelande",contact_send:"Skicka meddelande",contact_ok:"Meddelande skickat! Vi svarar inom 24 timmar.",contact_err:"Något gick fel. Försök igen.",contact_name_placeholder:"Erik Svensson",contact_email_placeholder:"erik@foretag.se",contact_msg_placeholder:"Hur kan vi hjälpa dig?",
+  modal_title:"Boka en gratis demo",modal_name:"Fullt namn",modal_email:"E-postadress",modal_phone:"Telefonnummer (valfritt)",modal_website:"Din webbplats-URL",modal_plan:"Intresserad plan",modal_plan_none:"— Välj en plan —",modal_plan_starter:"Starter — €99/mån",modal_plan_pro:"Professional — €299/mån",modal_plan_business:"Business — €699/mån",modal_message:"Meddelande (valfritt)",modal_submit:"Skicka demoförfrågan",modal_sending:"Skickar...",modal_note:"Ingen bindning. Vi kontaktar dig inom 24 timmar.",modal_success_h:"Förfrågan skickad!",modal_success_p:"Vi hör av oss inom 24 timmar för att boka din demo.",modal_close:"Stäng",modal_error_h:"Något gick fel",modal_error_p:"Försök igen eller maila oss direkt på",modal_retry:"Försök igen"
 },
 no:{
   nav_how:"Slik fungerer det",nav_examples:"Eksempler",nav_pricing:"Priser",nav_faq:"FAQ",nav_cta:"Book gratis demo",
@@ -233,7 +250,9 @@ no:{
   final_h1a:"Vent aldri på en webutvikler",final_h1b:"igjen.",
   final_sub:"Book en gratis demo og se nettstedet ditt styrt direkte fra WhatsApp.",
   final_cta:"Book min demo",final_note:"Ingen binding. 30-minutters samtale. Se det live.",
-  footer_copy:"© 2026 WebAssist. Alle rettigheter forbeholdt.",footer_privacy:"Personvern",footer_terms:"Vilkår",footer_contact:"Kontakt"
+  footer_copy:"© 2026 WebAssist. Alle rettigheter forbeholdt.",footer_privacy:"Personvern",footer_terms:"Vilkår",footer_contact:"Kontakt",
+  contact_h2:"Kontakt oss",contact_sub:"Har du et spørsmål? Send oss en melding, så svarer vi innen 24 timer.",contact_name:"Ditt navn",contact_email_label:"E-postadresse",contact_msg:"Melding",contact_send:"Send melding",contact_ok:"Melding sendt! Vi svarer innen 24 timer.",contact_err:"Noe gikk galt. Prøv igjen.",contact_name_placeholder:"Erik Hansen",contact_email_placeholder:"erik@bedrift.no",contact_msg_placeholder:"Hvordan kan vi hjelpe deg?",
+  modal_title:"Book en gratis demo",modal_name:"Fullt navn",modal_email:"E-postadresse",modal_phone:"Telefonnummer (valgfritt)",modal_website:"Din nettside-URL",modal_plan:"Interessert plan",modal_plan_none:"— Velg en plan —",modal_plan_starter:"Starter — €99/md",modal_plan_pro:"Professional — €299/md",modal_plan_business:"Business — €699/md",modal_message:"Melding (valgfritt)",modal_submit:"Send demoforespørsel",modal_sending:"Sender...",modal_note:"Ingen binding. Vi kontakter deg innen 24 timer.",modal_success_h:"Forespørsel sendt!",modal_success_p:"Vi tar kontakt innen 24 timer for å planlegge demoen din.",modal_close:"Lukk",modal_error_h:"Noe gikk galt",modal_error_p:"Prøv igjen eller send oss e-post direkte på",modal_retry:"Prøv igjen"
 },
 nl:{
   nav_how:"Hoe het werkt",nav_examples:"Voorbeelden",nav_pricing:"Prijzen",nav_faq:"FAQ",nav_cta:"Boek gratis demo",
@@ -292,7 +311,9 @@ nl:{
   final_h1a:"Wacht nooit meer op een webontwikkelaar",final_h1b:"meer.",
   final_sub:"Boek een gratis demo en zie uw website direct vanuit WhatsApp beheerd worden.",
   final_cta:"Boek mijn demo",final_note:"Geen verplichting. 30 minuten gesprek. Zie het live.",
-  footer_copy:"© 2026 WebAssist. Alle rechten voorbehouden.",footer_privacy:"Privacy",footer_terms:"Voorwaarden",footer_contact:"Contact"
+  footer_copy:"© 2026 WebAssist. Alle rechten voorbehouden.",footer_privacy:"Privacy",footer_terms:"Voorwaarden",footer_contact:"Contact",
+  contact_h2:"Neem contact op",contact_sub:"Heeft u een vraag? Stuur ons een bericht en we reageren binnen 24 uur.",contact_name:"Uw naam",contact_email_label:"E-mailadres",contact_msg:"Bericht",contact_send:"Bericht verzenden",contact_ok:"Bericht verzonden! We antwoorden binnen 24 uur.",contact_err:"Er ging iets mis. Probeer het opnieuw.",contact_name_placeholder:"Jan Jansen",contact_email_placeholder:"jan@bedrijf.nl",contact_msg_placeholder:"Hoe kunnen we u helpen?",
+  modal_title:"Boek een gratis demo",modal_name:"Volledige naam",modal_email:"E-mailadres",modal_phone:"Telefoonnummer (optioneel)",modal_website:"Uw website-URL",modal_plan:"Geïnteresseerd plan",modal_plan_none:"— Kies een plan —",modal_plan_starter:"Starter — €99/md",modal_plan_pro:"Professional — €299/md",modal_plan_business:"Business — €699/md",modal_message:"Bericht (optioneel)",modal_submit:"Demoverzoek versturen",modal_sending:"Verzenden...",modal_note:"Geen verplichting. We nemen binnen 24 uur contact met u op.",modal_success_h:"Verzoek verzonden!",modal_success_p:"We nemen binnen 24 uur contact op om uw demo in te plannen.",modal_close:"Sluiten",modal_error_h:"Er ging iets mis",modal_error_p:"Probeer het opnieuw of e-mail ons rechtstreeks op",modal_retry:"Probeer opnieuw"
 },
 de:{
   nav_how:"So funktioniert es",nav_examples:"Beispiele",nav_pricing:"Preise",nav_faq:"FAQ",nav_cta:"Kostenlose Demo buchen",
@@ -351,7 +372,9 @@ de:{
   final_h1a:"Warten Sie nie wieder auf einen Webentwickler",final_h1b:"wieder.",
   final_sub:"Buchen Sie eine kostenlose Demo und sehen Sie, wie Ihre Website direkt über WhatsApp verwaltet wird.",
   final_cta:"Meine Demo buchen",final_note:"Keine Verpflichtung. 30-Minuten-Gespräch. Live erleben.",
-  footer_copy:"© 2026 WebAssist. Alle Rechte vorbehalten.",footer_privacy:"Datenschutz",footer_terms:"AGB",footer_contact:"Kontakt"
+  footer_copy:"© 2026 WebAssist. Alle Rechte vorbehalten.",footer_privacy:"Datenschutz",footer_terms:"AGB",footer_contact:"Kontakt",
+  contact_h2:"Kontakt aufnehmen",contact_sub:"Haben Sie eine Frage? Senden Sie uns eine Nachricht und wir melden uns innerhalb von 24 Stunden.",contact_name:"Ihr Name",contact_email_label:"E-Mail-Adresse",contact_msg:"Nachricht",contact_send:"Nachricht senden",contact_ok:"Nachricht gesendet! Wir antworten innerhalb von 24 Stunden.",contact_err:"Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",contact_name_placeholder:"Max Müller",contact_email_placeholder:"max@firma.de",contact_msg_placeholder:"Wie können wir Ihnen helfen?",
+  modal_title:"Kostenlose Demo buchen",modal_name:"Vollständiger Name",modal_email:"E-Mail-Adresse",modal_phone:"Telefonnummer (optional)",modal_website:"Ihre Website-URL",modal_plan:"Interessierter Plan",modal_plan_none:"— Plan auswählen —",modal_plan_starter:"Starter — €99/Mo",modal_plan_pro:"Professional — €299/Mo",modal_plan_business:"Business — €699/Mo",modal_message:"Nachricht (optional)",modal_submit:"Demo-Anfrage senden",modal_sending:"Wird gesendet...",modal_note:"Kein Engagement. Wir melden uns innerhalb von 24 Stunden.",modal_success_h:"Anfrage gesendet!",modal_success_p:"Wir melden uns innerhalb von 24 Stunden, um Ihre Demo zu planen.",modal_close:"Schließen",modal_error_h:"Etwas ist schiefgelaufen",modal_error_p:"Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an",modal_retry:"Erneut versuchen"
 },
 es:{
   nav_how:"Cómo funciona",nav_examples:"Ejemplos",nav_pricing:"Precios",nav_faq:"FAQ",nav_cta:"Reservar demo gratis",
@@ -410,7 +433,9 @@ es:{
   final_h1a:"Nunca esperes a un desarrollador web",final_h1b:"de nuevo.",
   final_sub:"Reserva una demo gratis y ve tu web gestionada directamente desde WhatsApp.",
   final_cta:"Reservar mi demo",final_note:"Sin compromiso. Llamada de 30 minutos. Véelo en vivo.",
-  footer_copy:"© 2026 WebAssist. Todos los derechos reservados.",footer_privacy:"Privacidad",footer_terms:"Condiciones",footer_contact:"Contacto"
+  footer_copy:"© 2026 WebAssist. Todos los derechos reservados.",footer_privacy:"Privacidad",footer_terms:"Condiciones",footer_contact:"Contacto",
+  contact_h2:"Contáctanos",contact_sub:"¿Tienes una pregunta? Envíanos un mensaje y te respondemos en 24 horas.",contact_name:"Tu nombre",contact_email_label:"Dirección de email",contact_msg:"Mensaje",contact_send:"Enviar mensaje",contact_ok:"¡Mensaje enviado! Te responderemos en 24 horas.",contact_err:"Algo salió mal. Inténtalo de nuevo.",contact_name_placeholder:"Juan García",contact_email_placeholder:"juan@empresa.es",contact_msg_placeholder:"¿Cómo podemos ayudarle?",
+  modal_title:"Reservar demo gratis",modal_name:"Nombre completo",modal_email:"Dirección de email",modal_phone:"Número de teléfono (opcional)",modal_website:"URL de tu web",modal_plan:"Plan de interés",modal_plan_none:"— Selecciona un plan —",modal_plan_starter:"Starter — €99/mes",modal_plan_pro:"Professional — €299/mes",modal_plan_business:"Business — €699/mes",modal_message:"Mensaje (opcional)",modal_submit:"Enviar solicitud de demo",modal_sending:"Enviando...",modal_note:"Sin compromiso. Te contactaremos en 24 horas.",modal_success_h:"¡Solicitud enviada!",modal_success_p:"Te contactaremos en 24 horas para programar tu demo.",modal_close:"Cerrar",modal_error_h:"Algo salió mal",modal_error_p:"Inténtalo de nuevo o escríbenos directamente a",modal_retry:"Intentar de nuevo"
 },
 uk:{
   nav_how:"Як це працює",nav_examples:"Приклади",nav_pricing:"Ціни",nav_faq:"FAQ",nav_cta:"Замовити демо",
@@ -469,7 +494,9 @@ uk:{
   final_h1a:"Більше ніколи не чекайте на веб-розробника",final_h1b:"знову.",
   final_sub:"Замовте безкоштовне демо і побачте, як ваш сайт керується прямо з WhatsApp.",
   final_cta:"Замовити демо",final_note:"Без зобов'язань. 30-хвилинний дзвінок.",
-  footer_copy:"© 2026 WebAssist. Усі права захищено.",footer_privacy:"Конфіденційність",footer_terms:"Умови",footer_contact:"Контакт"
+  footer_copy:"© 2026 WebAssist. Усі права захищено.",footer_privacy:"Конфіденційність",footer_terms:"Умови",footer_contact:"Контакт",
+  contact_h2:"Зв'яжіться з нами",contact_sub:"Маєте запитання? Надішліть нам повідомлення, і ми відповімо протягом 24 годин.",contact_name:"Ваше ім'я",contact_email_label:"Електронна адреса",contact_msg:"Повідомлення",contact_send:"Надіслати повідомлення",contact_ok:"Повідомлення надіслано! Ми відповімо протягом 24 годин.",contact_err:"Щось пішло не так. Спробуйте ще раз.",contact_name_placeholder:"Іван Коваль",contact_email_placeholder:"ivan@kompaniya.ua",contact_msg_placeholder:"Як ми можемо вам допомогти?",
+  modal_title:"Замовити безкоштовне демо",modal_name:"Повне ім'я",modal_email:"Електронна адреса",modal_phone:"Номер телефону (необов'язково)",modal_website:"URL вашого сайту",modal_plan:"Зацікавлений план",modal_plan_none:"— Виберіть план —",modal_plan_starter:"Starter — €99/міс",modal_plan_pro:"Professional — €299/міс",modal_plan_business:"Business — €699/міс",modal_message:"Повідомлення (необов'язково)",modal_submit:"Надіслати запит на демо",modal_sending:"Надсилання...",modal_note:"Без зобов'язань. Ми зв'яжемося з вами протягом 24 годин.",modal_success_h:"Запит надіслано!",modal_success_p:"Ми зв'яжемося з вами протягом 24 годин для планування демо.",modal_close:"Закрити",modal_error_h:"Щось пішло не так",modal_error_p:"Спробуйте ще раз або напишіть нам безпосередньо на",modal_retry:"Спробувати знову"
 },
 pl:{
   nav_how:"Jak to działa",nav_examples:"Przykłady",nav_pricing:"Cennik",nav_faq:"FAQ",nav_cta:"Zarezerwuj demo",
@@ -528,7 +555,9 @@ pl:{
   final_h1a:"Nigdy więcej nie czekaj na webdevelopera",final_h1b:"więcej.",
   final_sub:"Zarezerwuj darmowe demo i zobacz, jak Twoja strona jest zarządzana bezpośrednio z WhatsApp.",
   final_cta:"Zarezerwuj moje demo",final_note:"Bez zobowiązań. 30-minutowa rozmowa.",
-  footer_copy:"© 2026 WebAssist. Wszelkie prawa zastrzeżone.",footer_privacy:"Prywatność",footer_terms:"Regulamin",footer_contact:"Kontakt"
+  footer_copy:"© 2026 WebAssist. Wszelkie prawa zastrzeżone.",footer_privacy:"Prywatność",footer_terms:"Regulamin",footer_contact:"Kontakt",
+  contact_h2:"Skontaktuj się z nami",contact_sub:"Masz pytanie? Wyślij nam wiadomość, a odpowiemy w ciągu 24 godzin.",contact_name:"Twoje imię",contact_email_label:"Adres e-mail",contact_msg:"Wiadomość",contact_send:"Wyślij wiadomość",contact_ok:"Wiadomość wysłana! Odpowiemy w ciągu 24 godzin.",contact_err:"Coś poszło nie tak. Spróbuj ponownie.",contact_name_placeholder:"Jan Kowalski",contact_email_placeholder:"jan@firma.pl",contact_msg_placeholder:"Jak możemy Ci pomóc?",
+  modal_title:"Zarezerwuj bezpłatne demo",modal_name:"Pełne imię i nazwisko",modal_email:"Adres e-mail",modal_phone:"Numer telefonu (opcjonalnie)",modal_website:"URL Twojej strony",modal_plan:"Interesujący plan",modal_plan_none:"— Wybierz plan —",modal_plan_starter:"Starter — €99/mies",modal_plan_pro:"Professional — €299/mies",modal_plan_business:"Business — €699/mies",modal_message:"Wiadomość (opcjonalnie)",modal_submit:"Wyślij prośbę o demo",modal_sending:"Wysyłanie...",modal_note:"Bez zobowiązań. Skontaktujemy się w ciągu 24 godzin.",modal_success_h:"Prośba wysłana!",modal_success_p:"Odezwiemy się w ciągu 24 godzin, aby umówić Twoje demo.",modal_close:"Zamknij",modal_error_h:"Coś poszło nie tak",modal_error_p:"Spróbuj ponownie lub napisz do nas bezpośrednio na",modal_retry:"Spróbuj ponownie"
 }
 };
 
@@ -540,16 +569,64 @@ function setLanguage(lang){
     const k=el.getAttribute('data-i18n');
     if(T[lang][k]!==undefined)el.textContent=T[lang][k];
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-placeholder');
+    if(T[lang][k]!==undefined)el.placeholder=T[lang][k];
+  });
   document.documentElement.lang=lang;
   document.getElementById('langFlag').textContent=langMeta[lang].flag;
   document.getElementById('langCode').textContent=langMeta[lang].code;
   localStorage.setItem('wa_lang',lang);
+  // Update visitorLang hidden field if present
+  var vlEl=document.getElementById('visitorLang');
+  if(vlEl)vlEl.value=lang;
+  // Update submit button sending text reference
+  var sb=document.getElementById('submitBtn');
+  if(sb&&T[lang]['modal_sending'])sb.setAttribute('data-i18n-sending',T[lang]['modal_sending']);
   const m=document.getElementById('langMenu');
   if(m)m.classList.add('hidden');
+  // Update pricing
+  (function(){
+    var pr = PRICING[lang] || PRICING.en;
+    function set(id, txt) { var el = document.getElementById(id); if(el) el.textContent = txt; }
+    set('priceNumStarter', pr.s);
+    set('priceNumPro', pr.p);
+    set('priceNumBiz', pr.b);
+    set('priceSetupStarter', pr.su);
+    set('priceSetupPro', pr.pu);
+    set('priceSetupBiz', pr.bu);
+    set('btnBuyStarter', pr.buy_s);
+    set('btnBuyPro', pr.buy_p);
+    set('btnBuyBiz', pr.buy_b);
+    // Modal plan options
+    var opts = [
+      ['planSelect', null],
+    ];
+    var ps = document.getElementById('planSelect');
+    if(ps && ps.options.length >= 4) {
+      ps.options[1].text = pr.modal_s;
+      ps.options[2].text = pr.modal_p;
+      ps.options[3].text = pr.modal_b;
+    }
+  })();
 }
 function toggleLangMenu(){document.getElementById('langMenu').classList.toggle('hidden');}
 document.addEventListener('click',function(e){
   const s=document.getElementById('langSwitcher');
   if(s&&!s.contains(e.target))document.getElementById('langMenu').classList.add('hidden');
 });
-(function(){const s=localStorage.getItem('wa_lang');if(s&&s!=='en')setLanguage(s);})();
+(function(){
+  const saved=localStorage.getItem('wa_lang');
+  if(saved){setLanguage(saved);return;}
+  const bl=(navigator.language||'en').toLowerCase();
+  let lang='en';
+  if(bl.startsWith('da'))lang='da';
+  else if(bl.startsWith('sv'))lang='sv';
+  else if(bl.startsWith('no')||bl.startsWith('nb')||bl.startsWith('nn'))lang='no';
+  else if(bl.startsWith('nl'))lang='nl';
+  else if(bl.startsWith('de'))lang='de';
+  else if(bl.startsWith('es'))lang='es';
+  else if(bl.startsWith('uk'))lang='uk';
+  else if(bl.startsWith('pl'))lang='pl';
+  if(lang!=='en')setLanguage(lang);
+})();

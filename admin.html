@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebAssist Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { wa: '#25D366', waDark: '#128C7E' } } } }</script>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+
+<!-- LOGIN -->
+<div id="loginScreen" class="min-h-screen flex items-center justify-center px-4">
+  <div class="bg-white rounded-3xl shadow-2xl p-10 w-full max-w-sm">
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-10 bg-wa rounded-xl flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      </div>
+      <div>
+        <div class="font-black text-xl">WebAssist</div>
+        <div class="text-xs text-gray-400">Admin Dashboard</div>
+      </div>
+    </div>
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">Username</label>
+        <input id="loginUser" type="text" autocomplete="username" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-wa/30 focus:border-wa"/>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+        <input id="loginPass" type="password" autocomplete="current-password" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-wa/30 focus:border-wa"/>
+      </div>
+      <div id="loginError" class="hidden text-red-500 text-sm text-center">Incorrect username or password</div>
+      <button type="submit" class="w-full bg-wa hover:bg-waDark text-white font-bold py-3 rounded-full transition text-sm mt-2">Sign In</button>
+    </form>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+  <!-- Topbar -->
+  <header class="bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 bg-wa rounded-lg flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-5 h-5"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      </div>
+      <div>
+        <span class="font-black text-lg">WebAssist</span>
+        <span class="ml-2 text-xs text-gray-400 font-medium bg-gray-100 px-2 py-0.5 rounded-full">Admin</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="text-sm text-gray-500">Last updated: <span id="lastUpdated">—</span></span>
+      <button onclick="loadData()" class="text-sm bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full transition font-medium">↻ Refresh</button>
+      <button onclick="logout()" class="text-sm text-gray-500 hover:text-gray-900 transition">Sign out</button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="text-3xl font-black text-gray-900" id="stat-total-views">—</div>
+        <div class="text-sm text-gray-500 mt-1">Total Page Views</div>
+        <div class="text-xs text-gray-400 mt-2" id="stat-views-trend"></div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="text-3xl font-black text-gray-900" id="stat-total-bookings">—</div>
+        <div class="text-sm text-gray-500 mt-1">Demo Bookings</div>
+        <div class="text-xs text-gray-400 mt-2" id="stat-bookings-trend"></div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="text-3xl font-black text-wa" id="stat-total-contacts">—</div>
+        <div class="text-sm text-gray-500 mt-1">Contact Messages</div>
+        <div class="text-xs text-gray-400 mt-2" id="stat-contacts-trend"></div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="text-3xl font-black text-wa" id="stat-conversion">—</div>
+        <div class="text-sm text-gray-500 mt-1">Conversion Rate</div>
+        <div class="text-xs text-gray-400 mt-2">bookings / page views</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-1 mb-6 bg-gray-100 rounded-2xl p-1.5 w-fit">
+      <button id="tab-analytics" onclick="showTab('analytics')" class="px-5 py-2 rounded-xl text-sm font-semibold transition bg-white shadow-sm text-gray-900">Analytics</button>
+      <button id="tab-bookings" onclick="showTab('bookings')" class="px-5 py-2 rounded-xl text-sm font-semibold transition text-gray-500 hover:text-gray-700">Demo Bookings</button>
+      <button id="tab-contacts" onclick="showTab('contacts')" class="px-5 py-2 rounded-xl text-sm font-semibold transition text-gray-500 hover:text-gray-700">Contact Messages</button>
+    </div>
+
+    <!-- ANALYTICS VIEW -->
+    <div id="view-analytics">
+
+      <!-- Row 1: Timeline + Devices -->
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <div class="md:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-bold text-gray-900">Traffic — Last 30 Days</h2>
+            <div class="flex items-center gap-4 text-xs text-gray-500">
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-blue-400 inline-block"></span>Page Views</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#25D366] inline-block"></span>Bookings</span>
+            </div>
+          </div>
+          <div class="relative h-52"><canvas id="chartTimeline"></canvas></div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Devices</h2>
+          <div class="relative h-36"><canvas id="chartDevices"></canvas></div>
+          <div id="deviceLegend" class="mt-4 space-y-2 text-sm"></div>
+        </div>
+      </div>
+
+      <!-- Row 2: Browsers + OS + Day of week -->
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Browsers</h2>
+          <div class="relative h-36"><canvas id="chartBrowsers"></canvas></div>
+          <div id="browserLegend" class="mt-4 space-y-2 text-sm"></div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Operating Systems</h2>
+          <div class="relative h-36"><canvas id="chartOS"></canvas></div>
+          <div id="osLegend" class="mt-4 space-y-2 text-sm"></div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Activity by Day</h2>
+          <div class="relative h-44"><canvas id="chartDayOfWeek"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Row 3: Countries + Traffic Sources -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Countries</h2>
+          <div id="countriesList" class="space-y-2 max-h-64 overflow-y-auto"></div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Traffic Sources</h2>
+          <div id="sourcesList" class="space-y-2 max-h-64 overflow-y-auto"></div>
+        </div>
+      </div>
+
+      <!-- Row 4: Hour of day + Plan dist -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Traffic by Hour of Day</h2>
+          <div class="relative h-48"><canvas id="chartHour"></canvas></div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-900 mb-4">Booking Plan Distribution</h2>
+          <div class="relative h-36"><canvas id="chartPlans"></canvas></div>
+          <div id="planLegend" class="mt-4 space-y-2 text-sm"></div>
+        </div>
+      </div>
+
+      <!-- Row 5: Recent visitors table -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-6">
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="font-bold text-gray-900">Recent Visitors</h2>
+          <span id="visitors-count" class="text-xs text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full"></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wide">
+              <tr>
+                <th class="px-4 py-3 text-left">Time</th>
+                <th class="px-4 py-3 text-left">Country</th>
+                <th class="px-4 py-3 text-left">City</th>
+                <th class="px-4 py-3 text-left">Device</th>
+                <th class="px-4 py-3 text-left">Browser</th>
+                <th class="px-4 py-3 text-left">OS</th>
+                <th class="px-4 py-3 text-left">Screen</th>
+                <th class="px-4 py-3 text-left">Language</th>
+                <th class="px-4 py-3 text-left">Source</th>
+                <th class="px-4 py-3 text-left">Campaign</th>
+              </tr>
+            </thead>
+            <tbody id="visitors-tbody" class="divide-y divide-gray-50 text-gray-700"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Row 6: Activity feed -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <h2 class="font-bold text-gray-900 mb-4">Recent Conversions</h2>
+        <div id="activityFeed" class="space-y-3 max-h-64 overflow-y-auto"></div>
+      </div>
+
+    </div>
+
+    <!-- Bookings Table -->
+    <div id="view-bookings" class="hidden">
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="font-bold text-gray-900">Demo Booking Requests</h2>
+          <span id="bookings-count" class="text-xs text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full"></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wide">
+              <tr>
+                <th class="px-6 py-3 text-left">Name</th>
+                <th class="px-6 py-3 text-left">Email</th>
+                <th class="px-6 py-3 text-left">Phone</th>
+                <th class="px-6 py-3 text-left">Website</th>
+                <th class="px-6 py-3 text-left">Plan</th>
+                <th class="px-6 py-3 text-left">Message</th>
+                <th class="px-6 py-3 text-left">Date</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-tbody" class="divide-y divide-gray-50 text-gray-700"></tbody>
+          </table>
+        </div>
+        <div id="bookings-empty" class="hidden py-16 text-center text-gray-400 text-sm">No bookings yet</div>
+      </div>
+    </div>
+
+    <!-- Contacts Table -->
+    <div id="view-contacts" class="hidden">
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="font-bold text-gray-900">Contact Form Submissions</h2>
+          <span id="contacts-count" class="text-xs text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full"></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wide">
+              <tr>
+                <th class="px-6 py-3 text-left">Name</th>
+                <th class="px-6 py-3 text-left">Email</th>
+                <th class="px-6 py-3 text-left">Message</th>
+                <th class="px-6 py-3 text-left">Date</th>
+              </tr>
+            </thead>
+            <tbody id="contacts-tbody" class="divide-y divide-gray-50 text-gray-700"></tbody>
+          </table>
+        </div>
+        <div id="contacts-empty" class="hidden py-16 text-center text-gray-400 text-sm">No messages yet</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // ── AUTH ──────────────────────────────────────────────────────────
+  const ADMIN_USER = 'admin';
+  const ADMIN_PASS = 'Summer2026!!';
+  const ADMIN_TOKEN = 'Summer2026!!';
+
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const user = document.getElementById('loginUser').value.trim();
+    const pass = document.getElementById('loginPass').value;
+    if (user === ADMIN_USER && pass === ADMIN_PASS) {
+      sessionStorage.setItem('wa_admin', 'true');
+      showDashboard();
+    } else {
+      document.getElementById('loginError').classList.remove('hidden');
+    }
+  });
+
+  function logout() {
+    sessionStorage.removeItem('wa_admin');
+    document.getElementById('dashboard').classList.add('hidden');
+    document.getElementById('loginScreen').classList.remove('hidden');
+  }
+
+  function showDashboard() {
+    document.getElementById('loginScreen').classList.add('hidden');
+    document.getElementById('dashboard').classList.remove('hidden');
+    loadData();
+  }
+
+  if (sessionStorage.getItem('wa_admin') === 'true') showDashboard();
+
+  // ── CHARTS ────────────────────────────────────────────────────────
+  const charts = {};
+  const COLORS = ['#25D366','#60a5fa','#f59e0b','#f87171','#a78bfa','#34d399','#fb923c','#e879f9','#38bdf8','#4ade80'];
+
+  function mkDoughnut(id, labels, data, legendId) {
+    const ctx = document.getElementById(id);
+    if (!ctx) return;
+    if (charts[id]) charts[id].destroy();
+    if (!labels.length) { if (legendId) document.getElementById(legendId).innerHTML = '<p class="text-gray-400 text-sm text-center">No data yet</p>'; return; }
+    charts[id] = new Chart(ctx.getContext('2d'), {
+      type: 'doughnut',
+      data: { labels, datasets: [{ data, backgroundColor: COLORS, borderWidth: 0, hoverOffset: 6 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, cutout: '60%' }
+    });
+    if (legendId) document.getElementById(legendId).innerHTML = labels.map((l, i) => `
+      <div class="flex items-center justify-between">
+        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:${COLORS[i]}"></span><span class="text-gray-600">${esc(l)}</span></span>
+        <span class="font-semibold text-gray-900">${data[i]}</span>
+      </div>`).join('');
+  }
+
+  function countBy(arr, key) {
+    const map = {};
+    arr.forEach(item => { const v = item[key] || 'Unknown'; map[v] = (map[v] || 0) + 1; });
+    return Object.entries(map).sort((a,b) => b[1]-a[1]);
+  }
+
+  function renderCharts(contacts, bookings, pageviews) {
+    const pv = pageviews || [];
+
+    // Timeline
+    const now = new Date();
+    const tlLabels = [], bData = [], pvData = [];
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date(now); d.setDate(d.getDate() - i);
+      const key = d.toISOString().slice(0,10);
+      tlLabels.push(i === 0 ? 'Today' : d.toLocaleDateString('en-GB', { day:'2-digit', month:'short' }));
+      bData.push(bookings.filter(b => b.created_at?.slice(0,10) === key).length);
+      pvData.push(pv.filter(p => p.created_at?.slice(0,10) === key).length);
+    }
+    if (charts.timeline) charts.timeline.destroy();
+    charts.timeline = new Chart(document.getElementById('chartTimeline').getContext('2d'), {
+      type: 'line',
+      data: { labels: tlLabels, datasets: [
+        { label:'Page Views', data:pvData, borderColor:'#60a5fa', backgroundColor:'rgba(96,165,250,0.08)', tension:0.4, fill:true, pointRadius:3, pointBackgroundColor:'#60a5fa' },
+        { label:'Bookings', data:bData, borderColor:'#25D366', backgroundColor:'rgba(37,211,102,0.08)', tension:0.4, fill:true, pointRadius:3, pointBackgroundColor:'#25D366' }
+      ]},
+      options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+        scales: { x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:11},color:'#9ca3af'}}, y:{grid:{color:'#f3f4f6'},ticks:{stepSize:1,font:{size:11},color:'#9ca3af'},beginAtZero:true} } }
+    });
+
+    // Devices
+    const devCounts = countBy(pv, 'device');
+    mkDoughnut('chartDevices', devCounts.map(x=>x[0]), devCounts.map(x=>x[1]), 'deviceLegend');
+
+    // Browsers
+    const brCounts = countBy(pv, 'browser');
+    mkDoughnut('chartBrowsers', brCounts.map(x=>x[0]), brCounts.map(x=>x[1]), 'browserLegend');
+
+    // OS
+    const osCounts = countBy(pv, 'os');
+    mkDoughnut('chartOS', osCounts.map(x=>x[0]), osCounts.map(x=>x[1]), 'osLegend');
+
+    // Plans
+    const planCounts = countBy(bookings, 'plan');
+    mkDoughnut('chartPlans', planCounts.map(x=>x[0]), planCounts.map(x=>x[1]), 'planLegend');
+
+    // Day of week
+    const dowCounts = Array(7).fill(0);
+    pv.forEach(p => { if (p.created_at) dowCounts[new Date(p.created_at).getDay()]++; });
+    const dowLabels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    const dowData = [1,2,3,4,5,6,0].map(i => dowCounts[i]);
+    if (charts.dow) charts.dow.destroy();
+    charts.dow = new Chart(document.getElementById('chartDayOfWeek').getContext('2d'), {
+      type:'bar',
+      data:{ labels:dowLabels, datasets:[{ data:dowData, backgroundColor:dowData.map((_,i)=>i<5?'rgba(37,211,102,0.75)':'rgba(37,211,102,0.3)'), borderRadius:8, borderSkipped:false }] },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+        scales:{ x:{grid:{display:false},ticks:{font:{size:12},color:'#6b7280'}}, y:{grid:{color:'#f3f4f6'},ticks:{stepSize:1,font:{size:11},color:'#9ca3af'},beginAtZero:true} } }
+    });
+
+    // Hour of day
+    const hourCounts = Array(24).fill(0);
+    pv.forEach(p => { if (p.created_at) hourCounts[new Date(p.created_at).getHours()]++; });
+    const hourLabels = Array.from({length:24}, (_,i) => i + 'h');
+    if (charts.hour) charts.hour.destroy();
+    charts.hour = new Chart(document.getElementById('chartHour').getContext('2d'), {
+      type:'bar',
+      data:{ labels:hourLabels, datasets:[{ data:hourCounts, backgroundColor:'rgba(96,165,250,0.6)', borderRadius:4, borderSkipped:false }] },
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+        scales:{ x:{grid:{display:false},ticks:{font:{size:10},color:'#9ca3af',maxTicksLimit:12}}, y:{grid:{color:'#f3f4f6'},ticks:{stepSize:1,font:{size:10},color:'#9ca3af'},beginAtZero:true} } }
+    });
+
+    // Countries
+    const countryCounts = countBy(pv.filter(p=>p.country), 'country');
+    const countryFlags = {
+      'Denmark':'🇩🇰','Sweden':'🇸🇪','Norway':'🇳🇴','Finland':'🇫🇮','Germany':'🇩🇪',
+      'Netherlands':'🇳🇱','Spain':'🇪🇸','France':'🇫🇷','United Kingdom':'🇬🇧','United States':'🇺🇸',
+      'Poland':'🇵🇱','Ukraine':'🇺🇦','Italy':'🇮🇹','Portugal':'🇵🇹','Belgium':'🇧🇪',
+      'Switzerland':'🇨🇭','Austria':'🇦🇹','Ireland':'🇮🇪','Canada':'🇨🇦','Australia':'🇦🇺'
+    };
+    const maxC = countryCounts[0]?.[1] || 1;
+    document.getElementById('countriesList').innerHTML = countryCounts.length
+      ? countryCounts.slice(0,20).map(([c,n]) => `
+          <div class="flex items-center gap-3">
+            <span class="text-xl w-7 text-center">${countryFlags[c]||'🌐'}</span>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-sm text-gray-700">${esc(c)}</span>
+                <span class="text-xs font-semibold text-gray-900">${n}</span>
+              </div>
+              <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-400 rounded-full" style="width:${Math.round(n/maxC*100)}%"></div>
+              </div>
+            </div>
+          </div>`).join('')
+      : '<p class="text-gray-400 text-sm text-center py-4">No geo data yet — visitors will appear after next page load</p>';
+
+    // Traffic sources
+    const refCounts = countBy(pv.filter(p=>p.referrer), 'referrer');
+    const directCount = pv.filter(p=>!p.referrer).length;
+    const allSources = [['Direct / None', directCount], ...refCounts].sort((a,b)=>b[1]-a[1]);
+    const maxS = allSources[0]?.[1] || 1;
+    document.getElementById('sourcesList').innerHTML = allSources.slice(0,15).map(([s,n]) => `
+      <div class="flex items-center gap-3">
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-sm text-gray-700 truncate max-w-[200px]">${esc(s)}</span>
+            <span class="text-xs font-semibold text-gray-900 ml-2">${n}</span>
+          </div>
+          <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full bg-wa rounded-full" style="width:${Math.round(n/maxS*100)}%"></div>
+          </div>
+        </div>
+      </div>`).join('');
+
+    // Recent visitors table
+    document.getElementById('visitors-count').textContent = pv.length + ' total';
+    document.getElementById('visitors-tbody').innerHTML = pv.slice(0,50).map(p => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 text-gray-400 whitespace-nowrap text-xs">${fmtDate(p.created_at)}</td>
+        <td class="px-4 py-3 text-gray-700">${p.country ? (countryFlags[p.country]||'🌐') + ' ' + esc(p.country) : '—'}</td>
+        <td class="px-4 py-3 text-gray-500">${esc(p.city||'—')}</td>
+        <td class="px-4 py-3"><span class="text-xs px-2 py-0.5 rounded-full ${p.device==='Mobile'?'bg-blue-50 text-blue-600':p.device==='Tablet'?'bg-purple-50 text-purple-600':'bg-gray-100 text-gray-600'}">${esc(p.device||'—')}</span></td>
+        <td class="px-4 py-3 text-gray-600">${esc(p.browser||'—')}</td>
+        <td class="px-4 py-3 text-gray-500">${esc(p.os||'—')}</td>
+        <td class="px-4 py-3 text-gray-400 text-xs">${esc(p.screen||'—')}</td>
+        <td class="px-4 py-3 text-gray-500 text-xs">${esc(p.lang||'—')}</td>
+        <td class="px-4 py-3 text-gray-500 text-xs max-w-[140px] truncate">${p.referrer ? esc(p.referrer) : '<span class="text-gray-300">Direct</span>'}</td>
+        <td class="px-4 py-3 text-gray-400 text-xs">${p.utm_campaign ? esc(p.utm_campaign) : '—'}</td>
+      </tr>`).join('') || '<tr><td colspan="10" class="text-center py-8 text-gray-400 text-sm">No visitor data yet</td></tr>';
+
+    // Activity feed
+    renderActivityFeed(contacts, bookings);
+  }
+
+  function renderActivityFeed(contacts, bookings) {
+    const all = [
+      ...bookings.map(b => ({ type:'booking', name:b.name, plan:b.plan, date:b.created_at })),
+      ...contacts.map(c => ({ type:'contact', name:c.name, date:c.created_at }))
+    ].sort((a,b) => new Date(b.date)-new Date(a.date)).slice(0,15);
+    const feed = document.getElementById('activityFeed');
+    if (!all.length) { feed.innerHTML = '<p class="text-gray-400 text-sm text-center pt-4">No conversions yet</p>'; return; }
+    feed.innerHTML = all.map(item => `
+      <div class="flex items-start gap-3">
+        <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs flex-shrink-0 ${item.type==='booking'?'bg-wa/10 text-waDark':'bg-blue-50 text-blue-500'}">
+          ${item.type==='booking'?'📅':'✉️'}
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-gray-800 truncate">${esc(item.name)}</p>
+          <p class="text-xs text-gray-400">${item.type==='booking'?'Booked demo'+(item.plan?' — '+esc(item.plan):''):'Sent a message'} · ${timeAgo(item.date)}</p>
+        </div>
+      </div>`).join('');
+  }
+
+  // ── DATA ──────────────────────────────────────────────────────────
+  async function loadData() {
+    try {
+      const res = await fetch('/api/admin-data', {
+        headers: { 'Authorization': `Bearer ${ADMIN_TOKEN}` }
+      });
+      if (!res.ok) throw new Error('Unauthorized');
+      const { contacts, bookings, pageviews } = await res.json();
+      renderStats(contacts, bookings, pageviews || []);
+      renderBookings(bookings);
+      renderContacts(contacts);
+      renderCharts(contacts, bookings, pageviews || []);
+      document.getElementById('lastUpdated').textContent = new Date().toLocaleTimeString();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function renderStats(contacts, bookings, pageviews) {
+    const now = new Date();
+    const inWeek = (d) => (now - new Date(d)) < 7 * 86400000;
+    const inLastMonth = (d) => { const dt = new Date(d); const lm = new Date(now); lm.setMonth(lm.getMonth()-1); return dt.getMonth() === lm.getMonth() && dt.getFullYear() === lm.getFullYear(); };
+
+    const totalViews = pageviews.length;
+    const weekViews = pageviews.filter(p => inWeek(p.created_at)).length;
+    const lmViews = pageviews.filter(p => inLastMonth(p.created_at)).length;
+    const weekBookings = bookings.filter(b => inWeek(b.created_at)).length;
+    const weekContacts = contacts.filter(c => inWeek(c.created_at)).length;
+
+    const convRate = totalViews > 0 ? ((bookings.length / totalViews) * 100).toFixed(1) + '%' : '—';
+
+    document.getElementById('stat-total-views').textContent = totalViews.toLocaleString();
+    document.getElementById('stat-total-bookings').textContent = bookings.length;
+    document.getElementById('stat-total-contacts').textContent = contacts.length;
+    document.getElementById('stat-conversion').textContent = convRate;
+
+    document.getElementById('stat-views-trend').textContent = `${weekViews} this week`;
+    document.getElementById('stat-bookings-trend').textContent = `${weekBookings} this week`;
+    document.getElementById('stat-contacts-trend').textContent = `${weekContacts} this week`;
+  }
+
+  function renderBookings(bookings) {
+    const tbody = document.getElementById('bookings-tbody');
+    document.getElementById('bookings-count').textContent = `${bookings.length} entries`;
+    if (!bookings.length) {
+      tbody.innerHTML = '';
+      document.getElementById('bookings-empty').classList.remove('hidden');
+      return;
+    }
+    document.getElementById('bookings-empty').classList.add('hidden');
+    tbody.innerHTML = bookings.map(b => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-6 py-4 font-medium text-gray-900">${esc(b.name)}</td>
+        <td class="px-6 py-4"><a href="mailto:${esc(b.email)}" class="text-wa hover:underline">${esc(b.email)}</a></td>
+        <td class="px-6 py-4 text-gray-500">${esc(b.phone || '—')}</td>
+        <td class="px-6 py-4 text-gray-500">${b.website ? `<a href="${esc(b.website)}" target="_blank" class="text-blue-500 hover:underline">${esc(b.website)}</a>` : '—'}</td>
+        <td class="px-6 py-4"><span class="bg-wa/10 text-waDark text-xs font-semibold px-2.5 py-1 rounded-full">${esc(b.plan || '—')}</span></td>
+        <td class="px-6 py-4 text-gray-500 max-w-xs truncate">${esc(b.message || '—')}</td>
+        <td class="px-6 py-4 text-gray-400 whitespace-nowrap">${fmtDate(b.created_at)}</td>
+      </tr>`).join('');
+  }
+
+  function renderContacts(contacts) {
+    const tbody = document.getElementById('contacts-tbody');
+    document.getElementById('contacts-count').textContent = `${contacts.length} entries`;
+    if (!contacts.length) {
+      tbody.innerHTML = '';
+      document.getElementById('contacts-empty').classList.remove('hidden');
+      return;
+    }
+    document.getElementById('contacts-empty').classList.add('hidden');
+    tbody.innerHTML = contacts.map(c => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-6 py-4 font-medium text-gray-900">${esc(c.name)}</td>
+        <td class="px-6 py-4"><a href="mailto:${esc(c.email)}" class="text-wa hover:underline">${esc(c.email)}</a></td>
+        <td class="px-6 py-4 text-gray-500 max-w-sm">${esc(c.message || '—')}</td>
+        <td class="px-6 py-4 text-gray-400 whitespace-nowrap">${fmtDate(c.created_at)}</td>
+      </tr>`).join('');
+  }
+
+  // ── TABS ──────────────────────────────────────────────────────────
+  function showTab(tab) {
+    ['analytics','bookings','contacts'].forEach(t => {
+      document.getElementById('view-' + t).classList.toggle('hidden', t !== tab);
+      document.getElementById('tab-' + t).className = t === tab
+        ? 'px-5 py-2 rounded-xl text-sm font-semibold transition bg-white shadow-sm text-gray-900'
+        : 'px-5 py-2 rounded-xl text-sm font-semibold transition text-gray-500 hover:text-gray-700';
+    });
+  }
+
+  // ── HELPERS ───────────────────────────────────────────────────────
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function fmtDate(s) {
+    const d = new Date(s);
+    return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' }) + ' ' + d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+  }
+  function timeAgo(s) {
+    const diff = (Date.now() - new Date(s)) / 1000;
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+    if (diff < 604800) return Math.floor(diff/86400) + 'd ago';
+    return fmtDate(s).split(' ').slice(0,2).join(' ');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="da" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>var defaultLang='da';</script>
+
+  <title>Blog — WebAssist | Guides og Tips til Hjemmeside Management</title>
+  <meta name="description" content="Guides, tips og nyheder om hjemmeside management, WhatsApp tools og AI for virksomheder. Lær at opdatere din hjemmeside hurtigere og billigere.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="author" content="WebAssist — Dynamic Media">
+  <link rel="canonical" href="https://dynamicmedia.dk/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dynamicmedia.dk/blog/">
+  <meta property="og:title" content="Blog — WebAssist | Guides og Tips til Hjemmeside Management">
+  <meta property="og:description" content="Guides, tips og nyheder om hjemmeside management, WhatsApp tools og AI for virksomheder.">
+  <meta property="og:image" content="https://dynamicmedia.dk/og-image.png">
+  <meta property="og:site_name" content="WebAssist">
+  <meta property="og:locale" content="da_DK">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — WebAssist | Guides og Tips til Hjemmeside Management">
+  <meta name="twitter:description" content="Guides, tips og nyheder om hjemmeside management, WhatsApp tools og AI for virksomheder.">
+  <meta name="twitter:image" content="https://dynamicmedia.dk/og-image.png">
+
+  <meta name="theme-color" content="#25D366">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "WebAssist Blog",
+    "url": "https://dynamicmedia.dk/blog/",
+    "description": "Guides, tips og nyheder om hjemmeside management, WhatsApp tools og AI for virksomheder.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "WebAssist",
+      "url": "https://dynamicmedia.dk"
+    },
+    "inLanguage": "da"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --wa: #25D366;
+      --wa-dark: #128C7E;
+      --wa-light: #DCF8C6;
+      --bg: #ffffff;
+      --bg2: #f8fafc;
+      --border: rgba(0,0,0,0.06);
+      --border-hover: rgba(37,211,102,0.3);
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.90); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--wa); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-logo-name { font-size: 17px; font-weight: 800; color: var(--text); letter-spacing: -0.3px; line-height: 1.2; }
+    .nav-logo-sub { font-size: 10px; color: var(--text-muted); letter-spacing: 0.3px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .btn-nav-cta { font-size: 14px; font-weight: 700; color: #000; background: var(--wa); border: none; border-radius: 50px; padding: 9px 20px; cursor: pointer; transition: all 0.2s; min-height: 40px; white-space: nowrap; letter-spacing: -0.2px; }
+    .btn-nav-cta:hover { background: #1fbb58; transform: translateY(-1px); }
+    #hamburgerBtn { display: none; flex-direction: column; justify-content: center; align-items: center; width: 44px; height: 44px; gap: 5px; background: #f1f5f9; border: 1px solid var(--border); border-radius: 12px; cursor: pointer; }
+    #hamburgerBtn span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+    #mobileMenu { display: none; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; background: rgba(255,255,255,0.98); border-top: 1px solid #e5e7eb; }
+    #mobileMenu.open { max-height: 480px; opacity: 1; }
+    .mobile-menu-inner { padding: 16px 24px 24px; display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu-inner a { font-size: 16px; font-weight: 600; color: var(--text-muted); text-decoration: none; padding: 12px 14px; border-radius: 12px; transition: all 0.2s; }
+    .mobile-menu-inner a:hover { background: #f1f5f9; color: var(--text); }
+    .mobile-cta { margin-top: 8px; font-size: 16px; font-weight: 700; color: #000; background: var(--wa); border: none; border-radius: 50px; padding: 14px; cursor: pointer; width: 100%; transition: background 0.2s; min-height: 52px; }
+    .mobile-cta:hover { background: #1fbb58; }
+
+    /* BLOG HERO */
+    .blog-hero { padding: 100px 24px 60px; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%, #ecfdf5 100%); border-bottom: 1px solid #e2e8f0; text-align: center; }
+    .blog-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: #16a34a; margin-bottom: 24px; }
+    .blog-hero h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 900; line-height: 1.1; letter-spacing: -1.5px; color: var(--text); margin-bottom: 16px; }
+    .blog-hero p { font-size: 17px; color: var(--text-muted); max-width: 560px; margin: 0 auto; line-height: 1.65; }
+
+    /* BLOG GRID */
+    .blog-section { padding: 60px 24px 80px; }
+    .blog-inner { max-width: 1100px; margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .blog-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; transition: all 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .blog-card:hover { transform: translateY(-4px); border-color: rgba(37,211,102,0.3); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .blog-card-tag { display: inline-block; background: rgba(37,211,102,0.1); color: #16a34a; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px; }
+    .blog-card-title { font-size: 20px; font-weight: 800; color: var(--text); line-height: 1.3; letter-spacing: -0.4px; margin-bottom: 12px; }
+    .blog-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; flex: 1; }
+    .blog-card-meta { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--text-subtle); margin-bottom: 20px; }
+    .blog-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #16a34a; text-decoration: none; transition: gap 0.2s; }
+    .blog-card-link:hover { gap: 10px; }
+
+    /* GRADIENT TEXT */
+    .gradient-text { background: linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #15803d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* BTN */
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #000; background: var(--wa); border: none; border-radius: 50px; padding: 16px 32px; cursor: pointer; transition: all 0.25s; box-shadow: 0 0 40px rgba(37,211,102,0.25), 0 4px 20px rgba(37,211,102,0.15); letter-spacing: -0.3px; min-height: 54px; text-decoration: none; white-space: nowrap; }
+    .btn-primary:hover { background: #1fbb58; transform: translateY(-2px); }
+
+    /* CTA BANNER */
+    .blog-cta-banner { background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid rgba(37,211,102,0.25); border-radius: 28px; padding: 48px 40px; text-align: center; margin: 0 0 0; }
+    .blog-cta-banner h2 { font-size: 28px; font-weight: 900; color: var(--text); letter-spacing: -0.5px; margin-bottom: 12px; }
+    .blog-cta-banner p { font-size: 16px; color: var(--text-muted); margin-bottom: 28px; }
+
+    /* FOOTER */
+    footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 32px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-icon { width:30px;height:30px;background:var(--wa);border-radius:8px;display:flex;align-items:center;justify-content:center; }
+    .footer-brand { font-size: 15px; font-weight: 800; color: var(--text); }
+    .footer-copy { font-size: 13px; color: var(--text-subtle); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size:13px;color:var(--text-subtle);text-decoration:none;transition:color 0.2s;min-height:40px;display:flex;align-items:center; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* MODAL */
+    #bookingModal { position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px; }
+    #bookingModal.active { display: flex; }
+    .modal-backdrop { position:absolute;inset:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px); }
+    .modal-box { position:relative;background:#ffffff;border:1px solid #e2e8f0;border-radius:28px;width:100%;max-width:520px;max-height:92dvh;overflow-y:auto;z-index:10;box-shadow:0 40px 120px rgba(0,0,0,0.15); }
+    .modal-inner { padding: 36px; }
+    .modal-close { position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:#f1f5f9;border:1px solid #e2e8f0;color:var(--text-muted);font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;line-height:1; }
+    .modal-close:hover { background: #e2e8f0; color: var(--text); }
+    .modal-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .modal-icon { width:44px;height:44px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .modal-title { font-size: 20px; font-weight: 900; color: var(--text); margin-bottom: 4px; }
+    .modal-sub { font-size: 13px; color: var(--text-muted); }
+    .modal-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .modal-form-group { margin-bottom: 14px; }
+    .modal-label { display:block;font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:7px; }
+    .modal-input, .modal-textarea, .modal-select { width:100%;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:11px 14px;font-size:14px;color:var(--text);font-family:inherit;transition:all 0.2s;min-height:46px; }
+    .modal-input:focus, .modal-textarea:focus, .modal-select:focus { outline:none;border-color:rgba(37,211,102,0.5);background:rgba(37,211,102,0.03); }
+    .modal-input::placeholder, .modal-textarea::placeholder { color: #94a3b8; }
+    .modal-textarea { resize: none; min-height: 90px; }
+    .modal-select { background-color: #f8fafc; color: var(--text); }
+    .modal-select option { background: #ffffff; color: var(--text); }
+    .btn-modal-submit { width:100%;font-size:15px;font-weight:800;color:#000;background:var(--wa);border:none;border-radius:50px;padding:15px;cursor:pointer;transition:all 0.2s;min-height:52px;margin-bottom:12px; }
+    .btn-modal-submit:hover { background: #1fbb58; }
+    .btn-modal-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .modal-note { font-size: 12px; color: var(--text-subtle); text-align: center; }
+    .modal-success, .modal-error { display: none; text-align: center; padding: 20px 0; }
+    .modal-result-icon { width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px; }
+    .modal-result-icon.success { background: rgba(37,211,102,0.12); }
+    .modal-result-icon.error { background: rgba(239,68,68,0.08); }
+    .modal-result-h { font-size: 22px; font-weight: 900; color: var(--text); margin-bottom: 10px; }
+    .modal-result-p { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+    .btn-modal-close { background:var(--wa);color:#000;font-size:14px;font-weight:800;padding:12px 28px;border-radius:50px;border:none;cursor:pointer;min-height:46px; }
+    .btn-modal-retry { background:transparent;border:1px solid #e2e8f0;color:var(--text-muted);font-size:14px;font-weight:700;padding:12px 28px;border-radius:50px;cursor:pointer;min-height:46px;transition:all 0.2s; }
+    .btn-modal-retry:hover { border-color: #cbd5e1; color: var(--text); }
+    .hidden { display: none !important; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .btn-nav-cta { display: none; }
+      #hamburgerBtn { display: flex; }
+      #mobileMenu { display: block; }
+    }
+    @media (max-width: 700px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-hero { padding: 90px 20px 50px; }
+      .blog-cta-banner { padding: 32px 24px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .modal-form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.073-1.117l-.29-.173-2.95.818.79-2.875-.19-.298A8 8 0 1112 20z"/></svg>
+      </div>
+      <div>
+        <div class="nav-logo-name">WebAssist</div>
+        <div class="nav-logo-sub">Powered by DynamicMedia</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/#solution">Sådan virker det</a>
+      <a href="/#examples">Eksempler</a>
+      <a href="/#pricing">Priser</a>
+      <a href="/blog/" style="color:#16a34a;font-weight:700;">Blog</a>
+    </div>
+    <div class="nav-right">
+      <button onclick="openModal()" class="btn-nav-cta">Book gratis demo</button>
+      <button onclick="toggleMobileMenu()" id="hamburgerBtn" aria-label="Menu">
+        <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="/#solution" onclick="closeMobileMenu()">Sådan virker det</a>
+      <a href="/#examples" onclick="closeMobileMenu()">Eksempler</a>
+      <a href="/#pricing" onclick="closeMobileMenu()">Priser</a>
+      <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+      <button onclick="openModal(); closeMobileMenu();" class="mobile-cta">Book gratis demo</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BLOG HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-badge">
+    <svg width="14" height="14" fill="none" stroke="#16a34a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+    Blog &amp; Guides
+  </div>
+  <h1>Tips, guides og indsigt om<br><span class="gradient-text">hjemmeside management</span></h1>
+  <p>Lær at opdatere din hjemmeside hurtigere, billigere og uden teknisk viden. Alt fra AI-tools til WhatsApp-automatisering.</p>
+</div>
+
+<!-- BLOG GRID -->
+<section class="blog-section">
+  <div class="blog-inner">
+    <div class="blog-grid">
+
+      <!-- Artikel 1 -->
+      <div class="blog-card">
+        <span class="blog-card-tag">Guide</span>
+        <div class="blog-card-title">Sådan opdaterer du din hjemmeside via WhatsApp i 2026</div>
+        <div class="blog-card-desc">Komplet guide til at opdatere din hjemmeside direkte fra WhatsApp — uden teknisk viden. Se hvordan AI gør det muligt at ændre priser, billeder og tekst på sekunder.</div>
+        <div class="blog-card-meta">
+          <span>10. juni 2026</span>
+          <span>&#9203; 6 min læsetid</span>
+        </div>
+        <a href="/blog/opdater-hjemmeside-whatsapp/" class="blog-card-link">Læs artikel &#8594;</a>
+      </div>
+
+      <!-- Artikel 2 -->
+      <div class="blog-card">
+        <span class="blog-card-tag">Guide</span>
+        <div class="blog-card-title">5 Alternativer til en Dyr Webudvikler (2026 Guide)</div>
+        <div class="blog-card-desc">Træt af at vente og betale for simple ændringer? Her er 5 alternativer til en webudvikler — fra DIY til AI-assistenter som WebAssist.</div>
+        <div class="blog-card-meta">
+          <span>10. juni 2026</span>
+          <span>&#9203; 5 min læsetid</span>
+        </div>
+        <a href="/blog/alternativ-til-webudvikler/" class="blog-card-link">Læs artikel &#8594;</a>
+      </div>
+
+      <!-- Artikel 3 -->
+      <div class="blog-card">
+        <span class="blog-card-tag">Guide</span>
+        <div class="blog-card-title">Administrer din hjemmeside fra mobilen — uden teknisk viden</div>
+        <div class="blog-card-desc">Guide til at styre din hjemmeside 100% fra din smartphone. Ingen laptop, ingen kodeord, ingen frustration. Se de bedste metoder i 2026.</div>
+        <div class="blog-card-meta">
+          <span>10. juni 2026</span>
+          <span>&#9203; 5 min læsetid</span>
+        </div>
+        <a href="/blog/administrer-hjemmeside-mobil/" class="blog-card-link">Læs artikel &#8594;</a>
+      </div>
+
+      <!-- Artikel 4 -->
+      <div class="blog-card">
+        <span class="blog-card-tag">Trend</span>
+        <div class="blog-card-title">AI og hjemmeside management — fremtiden er her i 2026</div>
+        <div class="blog-card-desc">Hvordan AI revolutionerer hjemmesideopdatering. Fra chatbots til WhatsApp-assistenter — se hvad der er muligt nu og hvad der kommer.</div>
+        <div class="blog-card-meta">
+          <span>10. juni 2026</span>
+          <span>&#9203; 5 min læsetid</span>
+        </div>
+        <a href="/blog/ai-hjemmeside-management/" class="blog-card-link">Læs artikel &#8594;</a>
+      </div>
+
+      <!-- Artikel 5 -->
+      <div class="blog-card">
+        <span class="blog-card-tag">Tips</span>
+        <div class="blog-card-title">WhatsApp til virksomheder — 7 smarte måder at bruge det i 2026</div>
+        <div class="blog-card-desc">WhatsApp er ikke kun til personlig kommunikation. Se 7 måder smarte virksomheder bruger WhatsApp til at spare tid og penge i deres daglige drift.</div>
+        <div class="blog-card-meta">
+          <span>10. juni 2026</span>
+          <span>&#9203; 5 min læsetid</span>
+        </div>
+        <a href="/blog/whatsapp-til-virksomheder/" class="blog-card-link">Læs artikel &#8594;</a>
+      </div>
+
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="blog-cta-banner" style="margin-top:60px;">
+      <h2>Prøv WebAssist gratis</h2>
+      <p>Book en gratis demo og se hvordan du kan styre din hjemmeside direkte fra WhatsApp — uden teknisk viden.</p>
+      <button onclick="openModal()" class="btn-primary">Book gratis demo</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      <div class="footer-logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000" width="16" height="16"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      </div>
+      <span class="footer-brand">WebAssist</span>
+    </a>
+    <p class="footer-copy">&copy; 2026 WebAssist. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/">Hjem</a>
+      <a href="/blog/">Blog</a>
+      <a href="mailto:phillip@dynamicmedia.dk">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal">
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="modal-box">
+    <div class="modal-inner">
+      <button onclick="closeModal()" class="modal-close">&times;</button>
+      <div id="modalForm">
+        <div class="modal-header">
+          <div class="modal-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" width="22" height="22"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.38A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          </div>
+          <div>
+            <div class="modal-title">Book en gratis demo</div>
+            <div class="modal-sub">Vi vender tilbage inden for 24 timer</div>
+          </div>
+        </div>
+        <form id="demoForm">
+          <div class="modal-form-row">
+            <div>
+              <label class="modal-label">Fulde navn</label>
+              <input type="text" name="name" required placeholder="Fulde navn" class="modal-input">
+            </div>
+            <div>
+              <label class="modal-label">Email-adresse</label>
+              <input type="email" name="email" required placeholder="din@email.dk" class="modal-input">
+            </div>
+          </div>
+          <div class="modal-form-row">
+            <div>
+              <label class="modal-label">Telefon (valgfri)</label>
+              <input type="tel" name="phone" placeholder="Telefon (valgfri)" class="modal-input">
+            </div>
+            <div>
+              <label class="modal-label">Din hjemmeside</label>
+              <input type="url" name="website" placeholder="https://dinside.dk" class="modal-input">
+            </div>
+          </div>
+          <div class="modal-form-group">
+            <label class="modal-label">Interesseret plan</label>
+            <select name="plan" id="planSelect" class="modal-select">
+              <option value="">— Vælg plan —</option>
+              <option value="Starter">Starter — €99/md</option>
+              <option value="Professional">Professional — €299/md</option>
+              <option value="Business">Business — €699/md</option>
+            </select>
+          </div>
+          <div class="modal-form-group">
+            <label class="modal-label">Besked (valgfri)</label>
+            <textarea name="message" rows="3" placeholder="Besked (valgfri)" class="modal-textarea"></textarea>
+          </div>
+          <button type="submit" id="submitBtn" class="btn-modal-submit">Send demo-anmodning</button>
+          <p class="modal-note">Ingen binding. Vi kontakter dig inden for 24 timer.</p>
+        </form>
+      </div>
+      <div id="modalSuccess" class="modal-success">
+        <div class="modal-result-icon success">
+          <svg width="32" height="32" fill="none" stroke="#25D366" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div class="modal-result-h">Anmodning sendt!</div>
+        <p class="modal-result-p">Vi vender tilbage inden for 24 timer for at aftale din demo.</p>
+        <button onclick="closeModal()" class="btn-modal-close">Luk</button>
+      </div>
+      <div id="modalError" class="modal-error">
+        <div class="modal-result-icon error">
+          <span style="font-size:28px;color:#ef4444;font-weight:900;">!</span>
+        </div>
+        <div class="modal-result-h">Noget gik galt</div>
+        <p class="modal-result-p">Prøv igen eller skriv direkte til <a href="mailto:phillip@dynamicmedia.dk" style="color:var(--wa);text-decoration:underline;">phillip@dynamicmedia.dk</a></p>
+        <button onclick="document.getElementById('modalError').style.display='none';document.getElementById('modalForm').style.display='';" class="btn-modal-retry">Prøv igen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var mobileMenuOpen=false;
+function toggleMobileMenu(){mobileMenuOpen=!mobileMenuOpen;var m=document.getElementById('mobileMenu'),h1=document.getElementById('hb1'),h2=document.getElementById('hb2'),h3=document.getElementById('hb3');if(mobileMenuOpen){m.classList.add('open');h1.style.transform='translateY(7px) rotate(45deg)';h2.style.opacity='0';h3.style.transform='translateY(-7px) rotate(-45deg)';}else{m.classList.remove('open');h1.style.transform=h2.style.opacity=h3.style.transform='';}}
+function closeMobileMenu(){if(!mobileMenuOpen)return;mobileMenuOpen=false;document.getElementById('mobileMenu').classList.remove('open');document.getElementById('hb1').style.transform=document.getElementById('hb2').style.opacity=document.getElementById('hb3').style.transform='';}
+function openModal(plan){if(plan)document.getElementById('planSelect').value=plan;var modal=document.getElementById('bookingModal');modal.classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow='';document.getElementById('modalForm').style.display='';document.getElementById('modalSuccess').style.display='none';document.getElementById('modalError').style.display='none';document.getElementById('demoForm').reset();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+document.getElementById('demoForm').addEventListener('submit',async function(e){e.preventDefault();var btn=document.getElementById('submitBtn');btn.textContent='Sender...';btn.disabled=true;var data=Object.fromEntries(new FormData(this));try{var res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(res.ok){document.getElementById('modalForm').style.display='none';document.getElementById('modalSuccess').style.display='block';}else{throw new Error('Failed');}}catch(err){document.getElementById('modalForm').style.display='none';document.getElementById('modalError').style.display='block';}finally{btn.textContent='Send demo-anmodning';btn.disabled=false;}});
+</script>
+</body>
+</html>
