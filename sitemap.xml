@@ -15,56 +15,114 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://dynamicmedia.dk/nl/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://dynamicmedia.dk/uk/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://dynamicmedia.dk/pl/"/>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- LANGUAGE HOMEPAGES -->
-  <url><loc>https://dynamicmedia.dk/da/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/en/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/de/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/es/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/sv/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/no/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/nl/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/uk/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dynamicmedia.dk/pl/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/es/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/sv/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/no/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/nl/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/uk/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dynamicmedia.dk/pl/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <!-- DANISH NICHE PAGES -->
-  <url><loc>https://dynamicmedia.dk/da/for-restauranter/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/da/for-ejendomsmaglere/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/da/for-klinikker/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/da/for-konsulenter/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/da/for-advokater/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/da/for-lokale-virksomheder/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-restauranter/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-ejendomsmaglere/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-klinikker/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-konsulenter/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-advokater/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-lokale-virksomheder/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-tandlaeger/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-frisorer/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/for-hotels/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/da/alternativ-til-webudvikler/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- ENGLISH NICHE PAGES -->
-  <url><loc>https://dynamicmedia.dk/en/for-restaurants/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/en/for-real-estate/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/en/for-clinics/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/en/for-consultants/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/en/for-law-firms/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/en/for-local-businesses/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-restaurants/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-real-estate/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-clinics/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-consultants/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-law-firms/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-local-businesses/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-dentists/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-beauty-salons/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-hotels/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-freelancers/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/for-gyms/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/alternative-to-web-developer/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/website-management-for-small-business/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/webassist-vs-wordpress/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/en/webassist-vs-wix/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- GERMAN NICHE PAGES -->
-  <url><loc>https://dynamicmedia.dk/de/fuer-restaurants/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/de/fuer-immobilienmakler/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/de/fuer-kliniken/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/de/fuer-berater/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-restaurants/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-immobilienmakler/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-kliniken/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-berater/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-kanzleien/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-lokale-unternehmen/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-zahnarztpraxen/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/de/fuer-hotels/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- SPANISH NICHE PAGES -->
-  <url><loc>https://dynamicmedia.dk/es/para-restaurantes/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/es/para-inmobiliarias/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/es/para-clinicas/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/es/para-consultores/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/es/para-restaurantes/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/es/para-inmobiliarias/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/es/para-clinicas/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/es/para-consultores/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/es/para-abogados/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- BLOG -->
-  <url><loc>https://dynamicmedia.dk/blog/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dynamicmedia.dk/blog/opdater-hjemmeside-whatsapp/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dynamicmedia.dk/blog/alternativ-til-webudvikler/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dynamicmedia.dk/blog/administrer-hjemmeside-mobil/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dynamicmedia.dk/blog/ai-hjemmeside-management/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dynamicmedia.dk/blog/whatsapp-til-virksomheder/</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- SWEDISH NICHE PAGES -->
+  <url><loc>https://dynamicmedia.dk/sv/for-restauranger/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/sv/for-fastighetsmaklare/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/sv/for-kliniker/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/sv/for-konsulter/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- NORWEGIAN NICHE PAGES -->
+  <url><loc>https://dynamicmedia.dk/no/for-restauranter/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/no/for-eiendomsmeglere/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/no/for-klinikker/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/no/for-konsulenter/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- DUTCH NICHE PAGES -->
+  <url><loc>https://dynamicmedia.dk/nl/voor-restaurants/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- UKRAINIAN NICHE PAGES -->
+  <url><loc>https://dynamicmedia.dk/uk/dlya-restoraniv/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/uk/dlya-klinik/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/uk/dlya-konsultantiv/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- DEMO -->
+  <url><loc>https://dynamicmedia.dk/demo/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- BLOG (DANISH) -->
+  <url><loc>https://dynamicmedia.dk/blog/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/opdater-hjemmeside-whatsapp/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/alternativ-til-webudvikler/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/administrer-hjemmeside-mobil/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/ai-hjemmeside-management/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/whatsapp-til-virksomheder/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- BLOG (ENGLISH) -->
+  <url><loc>https://dynamicmedia.dk/blog/update-website-without-developer/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/whatsapp-business-website-management/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/ai-website-assistant-small-business/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/restaurant-website-management/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- BLOG (GERMAN) -->
+  <url><loc>https://dynamicmedia.dk/blog/webseite-aktualisieren-whatsapp/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/ki-website-assistent/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- BLOG (SPANISH) -->
+  <url><loc>https://dynamicmedia.dk/blog/actualizar-web-whatsapp/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dynamicmedia.dk/blog/gestion-web-whatsapp/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- BLOG (POLISH) -->
+  <url><loc>https://dynamicmedia.dk/blog/aktualizacja-strony-whatsapp/</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
