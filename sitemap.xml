@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://dynamicmedia.dk/</loc><lastmod>2026-06-13</lastmod><priority>1.0</priority></url>
-<url><loc>https://dynamicmedia.dk/blog/</loc><lastmod>2026-06-13</lastmod><priority>0.9</priority></url>
+<url><loc>https://dynamicmedia.dk/blog/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
 <url><loc>https://dynamicmedia.dk/blog/actualizar-web-whatsapp/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
 <url><loc>https://dynamicmedia.dk/blog/administrer-hjemmeside-mobil/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
 <url><loc>https://dynamicmedia.dk/blog/ai-automation-small-business/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
@@ -407,7 +407,9 @@
 <url><loc>https://dynamicmedia.dk/da/for-ejendomsmaglere/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-elektrikere/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-eventplanlaeggere/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/da/for-fitnesscentre/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-fotografer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/da/for-freelancere/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-frisorer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-fysioterapeuter/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-gartneri/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
@@ -422,6 +424,7 @@
 <url><loc>https://dynamicmedia.dk/da/for-musikskoler/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-personlige-traenere/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-pizzeriaer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/da/for-rejsebureauer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-rengoeringsfirmaer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-restauranter/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/da/for-revisorer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
@@ -442,7 +445,7 @@
 <url><loc>https://dynamicmedia.dk/de/fuer-zahnarztpraxen/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
 <url><loc>https://dynamicmedia.dk/demo/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
 <url><loc>https://dynamicmedia.dk/en/</loc><lastmod>2026-06-13</lastmod><priority>0.9</priority></url>
-<url><loc>https://dynamicmedia.dk/en/alternative-to-web-developer/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/alternative-to-web-developer/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-accountants/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-architects/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-bakeries/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
@@ -470,6 +473,7 @@
 <url><loc>https://dynamicmedia.dk/en/for-personal-trainers/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-photographers/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-physiotherapists/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/for-pizzerias/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-plumbers/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-real-estate/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-restaurants/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
@@ -477,7 +481,17 @@
 <url><loc>https://dynamicmedia.dk/en/for-tattoo-studios/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-veterinarians/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/for-yoga-studios/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-duda/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-godaddy/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-hostinger/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-ionos/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-jimdo/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-one-com/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-site123/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/webassist-vs-squarespace/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-strikingly/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-webnode/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
+<url><loc>https://dynamicmedia.dk/en/webassist-vs-weebly/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/webassist-vs-wix/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/webassist-vs-wordpress/</loc><lastmod>2026-06-13</lastmod><priority>0.8</priority></url>
 <url><loc>https://dynamicmedia.dk/en/website-management-for-small-business/</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>

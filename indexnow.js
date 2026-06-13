@@ -2,7 +2,6 @@
 const key = '7f6881a77ec38193bbcbce11e325d79a';
 const host = 'dynamicmedia.dk';
 const keyLocation = `https://${host}/${key}.txt`;
-
 const urls = [
   'https://dynamicmedia.dk/',
   'https://dynamicmedia.dk/blog/',
@@ -411,7 +410,9 @@ const urls = [
   'https://dynamicmedia.dk/da/for-ejendomsmaglere/',
   'https://dynamicmedia.dk/da/for-elektrikere/',
   'https://dynamicmedia.dk/da/for-eventplanlaeggere/',
+  'https://dynamicmedia.dk/da/for-fitnesscentre/',
   'https://dynamicmedia.dk/da/for-fotografer/',
+  'https://dynamicmedia.dk/da/for-freelancere/',
   'https://dynamicmedia.dk/da/for-frisorer/',
   'https://dynamicmedia.dk/da/for-fysioterapeuter/',
   'https://dynamicmedia.dk/da/for-gartneri/',
@@ -426,6 +427,7 @@ const urls = [
   'https://dynamicmedia.dk/da/for-musikskoler/',
   'https://dynamicmedia.dk/da/for-personlige-traenere/',
   'https://dynamicmedia.dk/da/for-pizzeriaer/',
+  'https://dynamicmedia.dk/da/for-rejsebureauer/',
   'https://dynamicmedia.dk/da/for-rengoeringsfirmaer/',
   'https://dynamicmedia.dk/da/for-restauranter/',
   'https://dynamicmedia.dk/da/for-revisorer/',
@@ -474,6 +476,7 @@ const urls = [
   'https://dynamicmedia.dk/en/for-personal-trainers/',
   'https://dynamicmedia.dk/en/for-photographers/',
   'https://dynamicmedia.dk/en/for-physiotherapists/',
+  'https://dynamicmedia.dk/en/for-pizzerias/',
   'https://dynamicmedia.dk/en/for-plumbers/',
   'https://dynamicmedia.dk/en/for-real-estate/',
   'https://dynamicmedia.dk/en/for-restaurants/',
@@ -481,7 +484,17 @@ const urls = [
   'https://dynamicmedia.dk/en/for-tattoo-studios/',
   'https://dynamicmedia.dk/en/for-veterinarians/',
   'https://dynamicmedia.dk/en/for-yoga-studios/',
+  'https://dynamicmedia.dk/en/webassist-vs-duda/',
+  'https://dynamicmedia.dk/en/webassist-vs-godaddy/',
+  'https://dynamicmedia.dk/en/webassist-vs-hostinger/',
+  'https://dynamicmedia.dk/en/webassist-vs-ionos/',
+  'https://dynamicmedia.dk/en/webassist-vs-jimdo/',
+  'https://dynamicmedia.dk/en/webassist-vs-one-com/',
+  'https://dynamicmedia.dk/en/webassist-vs-site123/',
   'https://dynamicmedia.dk/en/webassist-vs-squarespace/',
+  'https://dynamicmedia.dk/en/webassist-vs-strikingly/',
+  'https://dynamicmedia.dk/en/webassist-vs-webnode/',
+  'https://dynamicmedia.dk/en/webassist-vs-weebly/',
   'https://dynamicmedia.dk/en/webassist-vs-wix/',
   'https://dynamicmedia.dk/en/webassist-vs-wordpress/',
   'https://dynamicmedia.dk/en/website-management-for-small-business/',
@@ -519,19 +532,13 @@ const urls = [
   'https://dynamicmedia.dk/webassist-vs-squarespace/',
   'https://dynamicmedia.dk/webassist-vs-wix/',
 ];
-
 async function submitIndexNow() {
   console.log(`Submitting ${urls.length} URLs to IndexNow...`);
   const res = await fetch('https://api.indexnow.org/indexnow', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    method: 'POST', headers: { 'Content-Type': 'application/json; charset=utf-8' },
     body: JSON.stringify({ host, key, keyLocation, urlList: urls }),
   });
-  if (res.ok || res.status === 202) {
-    console.log(`✅ IndexNow accepted ${urls.length} URLs (status: ${res.status})`);
-  } else {
-    const text = await res.text();
-    console.error(`❌ IndexNow error: ${res.status} — ${text}`);
-  }
+  if (res.ok || res.status === 202) console.log(`✅ IndexNow accepted ${urls.length} URLs (status: ${res.status})`);
+  else { const text = await res.text(); console.error(`❌ IndexNow error: ${res.status} — ${text}`); }
 }
 submitIndexNow().catch(console.error);
