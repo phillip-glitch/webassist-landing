@@ -406,37 +406,37 @@
     "offers": [
       {
         "@type": "Offer",
-        "name": "Starter",
-        "price": "29",
+        "name": "WebAssist",
+        "price": "149",
         "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "RecurringChargeSpecification",
           "billingPeriod": "P1M",
-          "price": "29",
+          "price": "149",
           "priceCurrency": "EUR"
         }
       },
       {
         "@type": "Offer",
-        "name": "Pro",
-        "price": "59",
+        "name": "Growth",
+        "price": "499",
         "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "RecurringChargeSpecification",
           "billingPeriod": "P1M",
-          "price": "59",
+          "price": "499",
           "priceCurrency": "EUR"
         }
       },
       {
         "@type": "Offer",
-        "name": "Agency",
-        "price": "129",
+        "name": "Partnership",
+        "price": "1499",
         "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "RecurringChargeSpecification",
           "billingPeriod": "P1M",
-          "price": "129",
+          "price": "1499",
           "priceCurrency": "EUR"
         }
       }
@@ -506,7 +506,7 @@
         "name": "What does WebAssist cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "WebAssist is available in three plans: Starter at €29/month, Pro at €59/month and Agency at €129/month. You can cancel your subscription at any time with 30 days notice."
+          "text": "WebAssist is available in three plans: WebAssist at €149/month, Growth at €499/month and Partnership at €1,499/month. You can cancel your subscription at any time with 30 days notice."
         }
       },
       {
@@ -801,58 +801,14 @@
 </section>
 
 <!-- PRICING -->
-<section id="pricing" aria-label="WebAssist priser og abonnementer">
+<section id="pricing" aria-label="WebAssist pricing">
   <div class="section-inner section-center">
-    <div class="section-badge reveal" data-i18n="price_badge">Pricing</div>
-    <h2 class="section-h2 reveal reveal-delay-1" data-i18n="price_h1">Simple, transparent pricing.</h2>
-    <p class="section-sub reveal reveal-delay-2" data-i18n="price_sub">All plans include onboarding, WhatsApp setup, and a dedicated AI assistant for your website.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card reveal">
-        <div class="plan-name" data-i18n="starter_title">Starter</div>
-        <div class="plan-desc" data-i18n="starter_desc">For businesses with occasional updates</div>
-        <div class="plan-price"><span class="plan-price-num" id="priceNumStarter">€99</span><span class="plan-price-period" data-i18n="per_month">/month</span></div>
-        <div class="plan-setup" id="priceSetupStarter" data-i18n="setup_650">+ €650 setup fee</div>
-        <ul class="plan-features">
-          <li><span class="fcheck">&#10003;</span><span data-i18n="starter_f1">Up to 10 updates/month</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="starter_f2">WhatsApp support</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="starter_f3">Text &amp; price changes</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="starter_f4">Same-day turnaround</span></li>
-        </ul>
-        <a href="https://buy.stripe.com/8x2cN49zvgaN4Wn4xu08g0n" target="_blank" class="btn-plan-buy green" id="btnBuyStarter">Buy Now — €99/mo</a>
-        <button onclick="openModal('Starter')" class="btn-plan-demo border-green" data-i18n="btn_demo">Book Free Demo</button>
-      </div>
-      <div class="pricing-card featured reveal reveal-delay-1">
-        <div class="pricing-popular-tag" data-i18n="pro_popular">Most Popular</div>
-        <div class="plan-name" data-i18n="pro_title">Professional</div>
-        <div class="plan-desc" data-i18n="pro_desc">For active businesses</div>
-        <div class="plan-price"><span class="plan-price-num" id="priceNumPro">€299</span><span class="plan-price-period" data-i18n="per_month">/month</span></div>
-        <div class="plan-setup" id="priceSetupPro" data-i18n="setup_999">+ €999 setup fee</div>
-        <ul class="plan-features white">
-          <li><span class="fcheck">&#10003;</span><span data-i18n="pro_f1">Unlimited small changes</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="pro_f2">Image replacements</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="pro_f3">SEO text updates</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="pro_f4">Priority turnaround</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="pro_f5">Monthly report</span></li>
-        </ul>
-        <a href="https://buy.stripe.com/28EeVc4fb9MpgF57JG08g0o" target="_blank" class="btn-plan-buy white" id="btnBuyPro">Buy Now — €299/mo</a>
-        <button onclick="openModal('Professional')" class="btn-plan-demo border-white" data-i18n="btn_demo">Book Free Demo</button>
-      </div>
-      <div class="pricing-card reveal reveal-delay-2">
-        <div class="plan-name" data-i18n="biz_title">Business</div>
-        <div class="plan-desc" data-i18n="biz_desc">For agencies and fast-moving businesses</div>
-        <div class="plan-price"><span class="plan-price-num" id="priceNumBiz">€699</span><span class="plan-price-period" data-i18n="per_month">/month</span></div>
-        <div class="plan-setup" id="priceSetupBiz" data-i18n="setup_1500">+ €1,500 setup fee</div>
-        <ul class="plan-features">
-          <li><span class="fcheck">&#10003;</span><span data-i18n="biz_f1">Everything in Professional</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="biz_f2">New landing pages</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="biz_f3">Advanced content updates</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="biz_f4">Priority support</span></li>
-          <li><span class="fcheck">&#10003;</span><span data-i18n="biz_f5">Dedicated account manager</span></li>
-        </ul>
-        <a href="https://buy.stripe.com/5kQaEW5jfbUxdsT2pm08g0p" target="_blank" class="btn-plan-buy green" id="btnBuyBiz">Buy Now — €699/mo</a>
-        <button onclick="openModal('Business')" class="btn-plan-demo border-green" data-i18n="btn_demo">Book Free Demo</button>
-      </div>
-    </div>
+    <div class="section-badge reveal">Pricing</div>
+    <h2 class="section-h2 reveal reveal-delay-1">Invest in real growth.</h2>
+    <p class="section-sub reveal reveal-delay-2">Transparent pricing. No hidden fees. All packages built on real client results.</p>
+    <div class="pricing-grid"><div class="pricing-card reveal"><div class="plan-name">WebAssist</div><div class="plan-desc">Update your website via WhatsApp. AI-powered website management — easy and fast.</div><div class="plan-price"><span class="plan-price-num">€149</span><span class="plan-price-period">&nbsp;/mo</span></div><div class="plan-setup">Monthly subscription · no commitment</div><ul class="plan-features"><li><span class="fcheck">&#10003;</span><span>Website management via WhatsApp</span></li><li><span class="fcheck">&#10003;</span><span>Same-day updates</span></li><li><span class="fcheck">&#10003;</span><span>Monthly performance report</span></li><li><span class="fcheck">&#10003;</span><span>AI-powered content updates</span></li><li><span class="fcheck">&#10003;</span><span>Technical maintenance included</span></li></ul><button onclick="openModal('WebAssist')" class="btn-plan-buy green" style="border:none;cursor:pointer;width:100%;font-family:inherit;">Get started</button></div><div class="pricing-card featured reveal reveal-delay-1"><div class="pricing-popular-tag">Most popular</div><div class="plan-name">Growth</div><div class="plan-desc">Everything in WebAssist plus marketing and visibility. For businesses that want to grow.</div><div class="plan-price"><span class="plan-price-num">€499</span><span class="plan-price-period">&nbsp;/mo</span></div><div class="plan-setup">Monthly subscription · no commitment</div><ul class="plan-features"><li><span class="fcheck">&#10003;</span><span>Everything in WebAssist +</span></li><li><span class="fcheck">&#10003;</span><span>SEO optimization</span></li><li><span class="fcheck">&#10003;</span><span>Content creation</span></li><li><span class="fcheck">&#10003;</span><span>Social media management</span></li><li><span class="fcheck">&#10003;</span><span>Monthly strategy meeting</span></li><li><span class="fcheck">&#10003;</span><span>Conversion optimization</span></li></ul><button onclick="openModal('Growth')" class="btn-plan-buy green" style="border:none;cursor:pointer;width:100%;font-family:inherit;">Get started</button></div><div class="pricing-card reveal"><div class="plan-name">Partnership</div><div class="plan-desc">The complete growth partnership. Everything your business needs digitally.</div><div class="plan-price"><span class="plan-price-num">€1,499</span><span class="plan-price-period">&nbsp;/mo</span></div><div class="plan-setup">Monthly subscription · no commitment</div><ul class="plan-features"><li><span class="fcheck">&#10003;</span><span>Everything in Growth +</span></li><li><span class="fcheck">&#10003;</span><span>Google / Meta Ads management</span></li><li><span class="fcheck">&#10003;</span><span>Conversion optimization</span></li><li><span class="fcheck">&#10003;</span><span>Dedicated account manager</span></li><li><span class="fcheck">&#10003;</span><span>Weekly reporting</span></li><li><span class="fcheck">&#10003;</span><span>Priority support</span></li></ul><button onclick="openModal('Partnership')" class="btn-plan-buy green" style="border:none;cursor:pointer;width:100%;font-family:inherit;">Apply for Partnership</button></div></div>
+    <div style="margin-top:24px;background:#fff;border:1px solid #e2e8f0;border-radius:28px;padding:32px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;box-shadow:0 1px 3px rgba(0,0,0,0.06);"><div style="flex:1;min-width:260px;"><div class="plan-name" style="margin-bottom:6px;">New website</div><div class="plan-desc" style="margin-bottom:0;max-width:560px;">Professional, conversion-optimized website built with modern technology. React, Tailwind, mobile-first design.</div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;"><div style="font-size:32px;font-weight:900;letter-spacing:-1px;color:var(--text);">from €990</div><div style="font-size:13px;color:var(--text-subtle);">One-time price</div><a href="#contact" class="btn-plan-buy green" style="text-decoration:none;padding:12px 28px;">Contact us</a></div></div>
+    <p class="section-sub" style="margin-top:24px;font-size:13px;">All prices excl. VAT · no commitment. Every project starts with a free consultation.</p>
   </div>
 </section>
 
@@ -880,7 +836,7 @@
       </details>
       <details class="faq-item reveal reveal-delay-4">
         <summary><span data-i18n="faq_q5">What happens if I need bigger changes?</span><span class="faq-icon">+</span></summary>
-        <p class="faq-answer" data-i18n="faq_a5">For major redesigns or entirely new websites, we can discuss a custom project quote. Our Business plan covers most advanced changes including new landing pages, blog posts, and full content overhauls.</p>
+        <p class="faq-answer" data-i18n="faq_a5">For major redesigns or entirely new websites, we can discuss a custom project quote. Our Partnership plan covers most advanced changes including new landing pages, blog posts, and full content overhauls.</p>
       </details>
     </div>
   </div>
@@ -996,12 +952,7 @@
           </div>
           <div class="modal-form-group">
             <label class="modal-label" data-i18n="modal_plan">Interested Plan</label>
-            <select name="plan" id="planSelect" class="modal-select">
-              <option value="" data-i18n="modal_plan_none">— Select a plan —</option>
-              <option value="Starter" data-i18n="modal_plan_starter">Starter — €99/mo</option>
-              <option value="Professional" data-i18n="modal_plan_pro">Professional — €299/mo</option>
-              <option value="Business" data-i18n="modal_plan_business">Business — €699/mo</option>
-            </select>
+            <select name="plan" id="planSelect" class="modal-select"><option value="">— Select a plan —</option><option value="WebAssist">WebAssist — €149/mo</option><option value="Growth">Growth — €499/mo</option><option value="Partnership">Partnership — €1,499/mo</option></select>
           </div>
           <div class="modal-form-group">
             <label class="modal-label" data-i18n="modal_message">Message (optional)</label>
